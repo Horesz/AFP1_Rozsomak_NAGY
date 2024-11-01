@@ -140,6 +140,8 @@ Teszteset                   | Elvárt eredmény
 
 Bábu kiválasztása           | A bábu kijelölhető
 
+Szabályos lépés             | A rendszer engedélyezi a szabályos lépés végrehajtását.
+
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
 **Tesztelő:** Vezetéknév Keresztnév

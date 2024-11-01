@@ -30,3 +30,10 @@ A felhasználó, ha letöltötte a játékot, akkor bármikor megnyithatja azt, 
 | K4 | Játék | Bábú leütése | A bábúk le tudnak ütni az ellenfél bábúit. |
 
 ## 7. Fogalomtár
+
+| Fogalom | Leírás |
+| :---: | --- |
+| Kotlin | programozási nyelv, amely az Android fejlesztéséhez használható |
+| Sakk | stratégiai táblajáték, két játékos részére |
+| Offline játék | Olyan játék, amelyhez nincs szükség internetkapcsolatra, lehetővé téve a zavartalan játékot. |
+| Felhasználói élmény | A felhasználók által a játék használata során szerzett összes tapasztalat, beleértve az interakciót, a felületet és a játékélményt. |

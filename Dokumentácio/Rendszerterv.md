@@ -95,11 +95,11 @@ Játék vége képernyő:
 
 ### Vásárolt softwarekomponensek és külső rendszerek
 
+Nincsenek vásárolt szoftverkomponensek vagy külső rendszerek. Az alkalmazás fejlesztése során minden használt komponens ingyenes és nyílt forráskódú.
+
 ### Hardver topológia
 
 ### Fizikai alrendszerek
-
-### Fejlesztő eszközök
 
 
 ## 8. Architekturális terv

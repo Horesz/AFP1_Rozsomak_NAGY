@@ -132,6 +132,8 @@ A felhasználói felület (GUI) elemeinek fejlesztése Kotlin nyelven történik
 
 ## 11. Tesztterv
 
+A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata, valamint a rendszer által megvalósított üzleti szolgáltatások verifikálása. A teszteléseket a fejlesztői csapat minden tagja elvégzi, és az eredményeket külön fájlokban dokumentálják.
+
 ### Tesztesetek
 
  | Teszteset | Elvárt eredmény | 

@@ -24,6 +24,9 @@ A felhasználó, ha letöltötte a játékot, akkor bármikor megnyithatja azt, 
 
 | Id | Modul | Név | Leírás |
 | :---: | --- | --- | --- |
-| K1 | ... | ... | ... |
+| K1 | Játék | Sakk tábla megjelenítése | A játékos lát egy sakk táblát, amelyen a bábuk elhelyezkednek. |
+| K2 | Játék | Bábuk mozgatása | A játékos kiválaszthat egy bábút, és elmozdíthatja egy érvényes mezőre. |
+| K3 | Játék | Játék vége | Ha az egyik játékos mattolja a másikat, a játék értesíti a felhasználót. |
+| K4 | Játék | Bábú leütése | A bábúk le tudnak ütni az ellenfél bábúit. |
 
 ## 7. Fogalomtár

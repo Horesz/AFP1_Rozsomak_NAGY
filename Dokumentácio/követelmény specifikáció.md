@@ -6,6 +6,8 @@ A szoftver célja egy sakk játék fejlesztése Android platformra, amely offlin
 
 ## 2. A jelenlegi helyzet leírása
 
+Jelenleg a felhasználóknak nehézségeik vannak a minőségi sakk játékok megtalálásában, amelyeket offline is használhatnak. A legtöbb elérhető alkalmazás vagy online platformokon érhető el, ahol a hirdetések folyamatosan zavarják a játékélményt. Ezen kívül a sok különböző verzió és platform miatt a felhasználók gyakran csalódnak, mert nem találják meg a számukra megfelelő játékot. Az igény egy letölthető, könnyen kezelhető sakk játékra egyértelmű, és ez a projekt ezt a piaci rést célozza meg.
+
 ## 3. Vágyálomrendszer
 
 ## 4. Jelenlegi üzleti folyamatok modellje

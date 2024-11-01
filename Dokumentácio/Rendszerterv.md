@@ -127,6 +127,8 @@ A felhasználói felület (GUI) elemeinek fejlesztése Kotlin nyelven történik
 
 -Folyamatos tesztelést végzünk egységtesztek és integrációs tesztek segítségével, a hibák feltárása és javítása érdekében.
 
+-Az eredményeket egy SQLite adatbázisban tároljuk, amely rögzíti a győztes nevét, a lépések számát és a játék időtartamát.
+
 
 ## 11. Tesztterv
 

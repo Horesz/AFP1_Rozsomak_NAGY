@@ -73,6 +73,10 @@ Főmenü:
 
    -Kilépés: A játékost kilépteti a játékból, és a program futása befejeződik.
 
+Játék vége képernyő:
+
+   -Győztes megjelenítése: A rendszer megjeleníti a győztes színét.
+
 ## 6. Fizikai környezet
 
 ### Vásárolt softwarekomponensek és külső rendszerek

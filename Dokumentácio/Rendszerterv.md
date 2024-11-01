@@ -37,6 +37,7 @@
 
 | Id | Modul | Név | Leírás |
 | K1 | Játék | Tábla megjelenítése | A játékos lát egy 8x8-as sakk táblát a képernyőn, amelyen a bábuk kezdő pozícióban vannak. |
+| K2 | Játék | Bábuk mozgatása | A játékos kiválaszthat egy bábut, és a sakk szabályai szerint léphet vele. |
 
 | ID | Megnevezés | Leírás |
 | --- | --- | --- |

@@ -61,6 +61,8 @@ Ez az alkalmazás kizárólag Android eszközökön futtatható. Internetkapcsol
 
 ### 5.1 Rendszerszereplők
 
+Ebben a projektben két játékos szerepel, akik ugyanazon az eszközön játszanak felváltva.
+
 ### 5.2 Menühierarchiák
 
 ## 6. Fizikai környezet

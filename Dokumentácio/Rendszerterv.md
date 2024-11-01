@@ -123,6 +123,8 @@ Az implementációs terv bemutatja a szoftver fejlesztésének folyamatait, ide�
 A játék fejlesztése során a kódolási folyamat a játékmenet logikájának megvalósításával kezdődik, beleértve a bábuk mozgását, a lépések szabályosságának ellenőrzését, valamint a sakk és matt helyzetek felismerését.
 A felhasználói felület (GUI) elemeinek fejlesztése Kotlin nyelven történik. A felületnek intuitívnak kell lennie, hogy a játékosok könnyen kezelhessék a játékot.
 
+A GUI kapcsolódik a háttérrendszerhez, vizuális visszajelzést nyújtva a felhasználóknak minden lépésükhöz.
+
 A funkcionális modulokat (játéklogika, GUI, adatbázis) összekapcsoljuk a megfelelő együttműködés biztosítására.
 
 ## 11. Tesztterv

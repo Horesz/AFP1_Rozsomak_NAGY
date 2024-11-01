@@ -120,12 +120,13 @@ A program használatához az alkalmazást le kell tölteni az Android eszközre.
 
 Az implementációs terv bemutatja a szoftver fejlesztésének folyamatait, ideértve a kódolási lépéseket, a modulok integrálását és a GUI összekapcsolását. A fejlesztés iteratív módon történik, biztosítva a folyamatos tesztelést és javításokat.
 
-A játék fejlesztése során a kódolási folyamat a játékmenet logikájának megvalósításával kezdődik, beleértve a bábuk mozgását, a lépések szabályosságának ellenőrzését, valamint a sakk és matt helyzetek felismerését.
+-A játék fejlesztése során a kódolási folyamat a játékmenet logikájának megvalósításával kezdődik, beleértve a bábuk mozgását, a lépések szabályosságának ellenőrzését, valamint a sakk és matt helyzetek felismerését.
 A felhasználói felület (GUI) elemeinek fejlesztése Kotlin nyelven történik. A felületnek intuitívnak kell lennie, hogy a játékosok könnyen kezelhessék a játékot.
 
-A GUI kapcsolódik a háttérrendszerhez, vizuális visszajelzést nyújtva a felhasználóknak minden lépésükhöz.
+-A GUI kapcsolódik a háttérrendszerhez, vizuális visszajelzést nyújtva a felhasználóknak minden lépésükhöz.
 
-A funkcionális modulokat (játéklogika, GUI, adatbázis) összekapcsoljuk a megfelelő együttműködés biztosítására.
+-Folyamatos tesztelést végzünk egységtesztek és integrációs tesztek segítségével, a hibák feltárása és javítása érdekében.
+
 
 ## 11. Tesztterv
 

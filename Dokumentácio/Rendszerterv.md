@@ -166,12 +166,14 @@ például. Teszt #01 | Regisztráció | A felhasználó az adatok megadásával 
 ## 12. Telepítési terv
 
 
-Fizikai telepítési terv: 
+## Fizikai telepítési terv: 
 
 A telepítéshez a fejlesztői környezetben szükség van egy megfelelő teljesítményű PC-re, amely támogatja az Android Studio futtatását. A végleges alkalmazás Android eszközökre készül, így minden olyan eszközön teszteljük és telepítjük, amely megfelel a minimális hardverkövetelményeknek (Android 7.0 vagy újabb).
 
-Szoftver telepítési terv: 
+## Szoftver telepítési terv: 
 
 A szoftver telepítése egyszerűen elvégezhető az Android áruházból történő letöltéssel. A felhasználónak csak le kell töltenie az alkalmazást, és elindítani a telepítést. Az alkalmazás telepítése után azonnal elérhető és futtatható.
 
 ## 13. Karbantartási terv
+
+Ez a projekt egyszeri laboratóriumi feladatként készült, ezért nincs szükség hosszú távú karbantartásra vagy rendszeres frissítésekre. A projekt elkészülte után a szoftver nem kerül további fejlesztésre. Ha hibát találunk a labor során, azokat helyben javítjuk.

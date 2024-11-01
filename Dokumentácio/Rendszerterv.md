@@ -118,6 +118,8 @@ A program használatához az alkalmazást le kell tölteni az Android eszközre.
 
 ## 10. Implementációs terv
 
+Az implementációs terv bemutatja a szoftver fejlesztésének folyamatait, ideértve a kódolási lépéseket, a modulok integrálását és a GUI összekapcsolását. A fejlesztés iteratív módon történik, biztosítva a folyamatos tesztelést és javításokat.
+
 ## 11. Tesztterv
 
 ### Tesztesetek

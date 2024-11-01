@@ -83,6 +83,16 @@ Játék vége képernyő:
 
 ## 6. Fizikai környezet
 
+## Fejlesztő eszközök
+
+-Android Studio: A Kotlin nyelven történő kódoláshoz.
+
+-Git: Verziókezeléshez és csapatmunkához.
+
+-Notepad++: Az ötletek rögzítéséhez és egyszerű jegyzetek készítéséhez.
+
+-Kanban: A projekt nyomon követéséhez és a feladatok kezeléséhez.
+
 ### Vásárolt softwarekomponensek és külső rendszerek
 
 ### Hardver topológia

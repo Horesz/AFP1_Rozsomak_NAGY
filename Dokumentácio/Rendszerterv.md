@@ -148,6 +148,8 @@ Sakk és Matt ellenőrzése    | A rendszer észleli, ha sakkban vagy mattban va
 
 Emberi lépés ellenőrzése    | A másik játékos megfelelően tud lépni az előző játékos lépése után.
 
+Játék vége                  | A játék vége képernyőn a győztes megjelenik, és lehetőség van új játék indítására.
+
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
 **Tesztelő:** Vezetéknév Keresztnév

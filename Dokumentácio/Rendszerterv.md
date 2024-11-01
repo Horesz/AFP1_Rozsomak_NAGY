@@ -77,6 +77,8 @@ Játék vége képernyő:
 
    -Győztes megjelenítése: A rendszer megjeleníti a győztes színét.
 
+   -Új játék: A játékos új játékot kezdhet.
+
 ## 6. Fizikai környezet
 
 ### Vásárolt softwarekomponensek és külső rendszerek

@@ -79,6 +79,8 @@ Játék vége képernyő:
 
    -Új játék: A játékos új játékot kezdhet.
 
+   -Kilépés: A játékost kilépteti a játékból.
+
 ## 6. Fizikai környezet
 
 ### Vásárolt softwarekomponensek és külső rendszerek

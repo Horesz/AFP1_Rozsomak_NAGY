@@ -142,6 +142,8 @@ Bábu kiválasztása           | A bábu kijelölhető
 
 Szabályos lépés             | A rendszer engedélyezi a szabályos lépés végrehajtását.
 
+Szabálytalan lépés          | A rendszer nem engedélyezi a szabálytalan lépést.
+
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
 **Tesztelő:** Vezetéknév Keresztnév

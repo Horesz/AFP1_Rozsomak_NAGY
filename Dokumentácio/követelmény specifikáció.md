@@ -18,6 +18,8 @@ Jelenleg, ha a felhasználónak kedve támad sakkozni, gyakran az interneten kel
 
 ## 5. Igényelt üzleti folyamatok modellje
 
+A felhasználó, ha letöltötte a játékot, akkor bármikor megnyithatja azt, és zavartalanul játszhat, ameddig szeretne. A játék befejezése után egyszerűen bezárhatja az alkalmazást. A játékhoz csak két ember kell akik felváltva tudnak játszani egymás ellen.
+
 ## 6. Követelménylista
 
 | Id | Modul | Név | Leírás |

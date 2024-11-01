@@ -99,6 +99,8 @@ Nincsenek vásárolt szoftverkomponensek vagy külső rendszerek. Az alkalmazás
 
 ### Hardver topológia
 
+Az alkalmazás futtatásához a felhasználóknak egy Android operációs rendszert futtató eszközre van szükségük, amely lehet okostelefon vagy tablet. A fejlesztői környezethez szükséges egy fejlesztői PC, amely támogatja az Android Studio futtatását.
+
 ### Fizikai alrendszerek
 
 

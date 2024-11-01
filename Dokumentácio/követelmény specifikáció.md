@@ -10,6 +10,8 @@ Jelenleg a felhasználóknak nehézségeik vannak a minőségi sakk játékok me
 
 ## 3. Vágyálomrendszer
 
+A cél egy intuitív és felhasználóbarát sakk játék létrehozása. A felhasználóknak egy érthető, jól megtervezett felhasználói felületen kell játszaniuk. A játék indítása után a felhasználó egy klasszikus sakk táblát lát, amelyen a bábuk a megfelelő helyeken állnak. A játék során a felhasználó a bábuk mozgatásával lépéseket tehet, és a rendszer folyamatosan figyeli a lépéseket, értesítve a játékost a matt, döntetlen vagy egyéb játékszabályokról. A játék végén a felhasználó értesítést kap a játék állásáról és statisztikákról, például a lépések számáról és a játék időtartamáról.
+
 ## 4. Jelenlegi üzleti folyamatok modellje
 
 ## 5. Igényelt üzleti folyamatok modellje

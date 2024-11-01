@@ -146,6 +146,8 @@ Szabálytalan lépés          | A rendszer nem engedélyezi a szabálytalan lé
 
 Sakk és Matt ellenőrzése    | A rendszer észleli, ha sakkban vagy mattban van a játékos.
 
+Emberi lépés ellenőrzése    | A másik játékos megfelelően tud lépni az előző játékos lépése után.
+
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
 **Tesztelő:** Vezetéknév Keresztnév

@@ -35,36 +35,76 @@
 
 ### Funkcionális követelmények
 
-| ID | Megnevezés | Leírás |
-| --- | --- | --- |
-| K1 | ... | ... |
+| Id | Modul | Név | Leírás |
+| K1 | Játék | Tábla megjelenítése | A játékos lát egy 8x8-as sakk táblát a képernyőn, amelyen a bábuk kezdő pozícióban vannak. |
+| K2 | Játék | Bábuk mozgatása | A játékos kiválaszthat egy bábut, és a sakk szabályai szerint léphet vele. |
+| K3 | Játék | Lépések ellenőrzése | A rendszer ellenőrzi, hogy a játékos által kiválasztott lépés szabályos-e.|
+| K4 | Játék | Sakk és Matt ellenőrzés | A rendszer folyamatosan ellenőrzi, hogy sakk vagy matt helyzet alakult-e ki. |
+| K5 | Játék | Emberi ellenfél | A játékos játszhat egy másik emberi játékos ellen, akik ugyanazon az eszközön felváltva lépnek. |
+| K6 | Játék | Eredmény tárolása | A játék végén a rendszer elmenti a játék eredményét egy adatbázisba, amely tartalmazza a győztest és a lépések számát. |
+| K7 | Játék | Start menü | A játék indításakor egy egyszerű start menü jelenik meg, amely lehetőséget ad új játék indítására vagy kilépésre. |
+| K8 | Játék vége képernyő | A játék végén megjelenik egy egyszerű képernyő, amely mutatja a győztest és lehetőséget ad új játék indítására vagy kilépésre. |
 
 ### Nemfunkcionális követelmények
 
-| ID | Megnevezés | Leírás |
-| --- | --- | --- |
-| K4 | ... | ... |
+-A felhasználói élmény intuitív legyen, a sakk szabályai következetesen érvényesüljenek.
+
+-Az alkalmazás gyorsan reagáljon a felhasználói műveletekre, minimalizálva a várakozási időt.
+
+-A felhasználók személyes adatai biztonságban maradjanak, mivel az alkalmazás offline működik, és nem igényel személyes adatokat.
 
 ### Támogatott eszközök
+
+Ez az alkalmazás kizárólag Android eszközökön futtatható. Internetkapcsolat nem szükséges, mivel offline módban működik.
 
 ## 5. Funkcionális terv
 
 ### 5.1 Rendszerszereplők
 
+Ebben a projektben két játékos szerepel, akik ugyanazon az eszközön játszanak felváltva.
+
 ### 5.2 Menühierarchiák
+
+A játék használatához nincs szükség bejelentkezésre vagy fiók létrehozására.
+
+Főmenü:
+
+   -Új játék: A játékos új játékot kezdhet, ahol két emberi játékos játszik egymás ellen ugyanazon az eszközön.
+
+   -Kilépés: A játékost kilépteti a játékból, és a program futása befejeződik.
+
+Játék vége képernyő:
+
+   -Győztes megjelenítése: A rendszer megjeleníti a győztes színét.
+
+   -Új játék: A játékos új játékot kezdhet.
+
+   -Kilépés: A játékost kilépteti a játékból.
 
 ## 6. Fizikai környezet
 
+## Fejlesztő eszközök
+
+-Android Studio: A Kotlin nyelven történő kódoláshoz.
+
+-Git: Verziókezeléshez és csapatmunkához.
+
+-Notepad++: Az ötletek rögzítéséhez és egyszerű jegyzetek készítéséhez.
+
+-Kanban: A projekt nyomon követéséhez és a feladatok kezeléséhez.
+
 ### Vásárolt softwarekomponensek és külső rendszerek
+
+Nincsenek vásárolt szoftverkomponensek vagy külső rendszerek. Az alkalmazás fejlesztése során minden használt komponens ingyenes és nyílt forráskódú.
 
 ### Hardver topológia
 
-### Fizikai alrendszerek
-
-### Fejlesztő eszközök
+Az alkalmazás futtatásához a felhasználóknak egy Android operációs rendszert futtató eszközre van szükségük, amely lehet okostelefon vagy tablet. A fejlesztői környezethez szükséges egy fejlesztői PC, amely támogatja az Android Studio futtatását.
 
 
 ## 8. Architekturális terv
+
+A játékot Kotlin nyelven írjuk, és Android alkalmazásként valósítjuk meg.
 
 ### Webszerver
 
@@ -72,17 +112,45 @@
 
 ### A program elérése, kezelése
 
+A program használatához az alkalmazást le kell tölteni az Android eszközre. Az alkalmazás telepítése után a játék egyszerűen elindítható az ikonjára kattintva.
+
 ## 9. Adatbázis terv
 
 ## 10. Implementációs terv
 
+Az implementációs terv bemutatja a szoftver fejlesztésének folyamatait, ideértve a kódolási lépéseket, a modulok integrálását és a GUI összekapcsolását. A fejlesztés iteratív módon történik, biztosítva a folyamatos tesztelést és javításokat.
+
+-A játék fejlesztése során a kódolási folyamat a játékmenet logikájának megvalósításával kezdődik, beleértve a bábuk mozgását, a lépések szabályosságának ellenőrzését, valamint a sakk és matt helyzetek felismerését.
+A felhasználói felület (GUI) elemeinek fejlesztése Kotlin nyelven történik. A felületnek intuitívnak kell lennie, hogy a játékosok könnyen kezelhessék a játékot.
+
+-A GUI kapcsolódik a háttérrendszerhez, vizuális visszajelzést nyújtva a felhasználóknak minden lépésükhöz.
+
+-Folyamatos tesztelést végzünk egységtesztek és integrációs tesztek segítségével, a hibák feltárása és javítása érdekében.
+
+-Az eredményeket egy SQLite adatbázisban tároljuk, amely rögzíti a győztes nevét, a lépések számát és a játék időtartamát.
+
+
 ## 11. Tesztterv
+
+A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata, valamint a rendszer által megvalósított üzleti szolgáltatások verifikálása. A teszteléseket a fejlesztői csapat minden tagja elvégzi, és az eredményeket külön fájlokban dokumentálják.
 
 ### Tesztesetek
 
- | Teszteset | Elvárt eredmény | 
- |-----------|-----------------| 
- | ... | ... |
+Teszteset                   | Elvárt eredmény
+
+Bábu kiválasztása           | A bábu kijelölhető
+
+Szabályos lépés             | A rendszer engedélyezi a szabályos lépés végrehajtását.
+
+Szabálytalan lépés          | A rendszer nem engedélyezi a szabálytalan lépést.
+
+Sakk és Matt ellenőrzése    | A rendszer észleli, ha sakkban vagy mattban van a játékos.
+
+Emberi lépés ellenőrzése    | A másik játékos megfelelően tud lépni az előző játékos lépése után.
+
+Játék vége                  | A játék vége képernyőn a győztes megjelenik, és lehetőség van új játék indítására.
+
+Eredmény tárolása           | A játék végén a rendszer helyesen eltárolja az eredményt az adatbázisban.
 
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
@@ -95,10 +163,17 @@ Tesztszám | Rövid leírás | Várt eredmény | Eredmény | Megjegyzés
 például. Teszt #01 | Regisztráció | A felhasználó az adatok megadásával sikeresen regisztrálni tud  | A felhasználó sikeresen regisztrált | Nem találtam problémát.
 ... | ... | ... | ... | ...
 
-## 12. Telepítési terv
 
-Fizikai telepítési terv: 
+### 12. Telepítési terv
 
-Szoftver telepítési terv: 
+## Fizikai telepítési terv: 
+
+A telepítéshez a fejlesztői környezetben szükség van egy megfelelő teljesítményű PC-re, amely támogatja az Android Studio futtatását. A végleges alkalmazás Android eszközökre készül, így minden olyan eszközön teszteljük és telepítjük, amely megfelel a minimális hardverkövetelményeknek (Android 7.0 vagy újabb).
+
+## Szoftver telepítési terv: 
+
+A szoftver telepítése egyszerűen elvégezhető az Android áruházból történő letöltéssel. A felhasználónak csak le kell töltenie az alkalmazást, és elindítani a telepítést. Az alkalmazás telepítése után azonnal elérhető és futtatható.
 
 ## 13. Karbantartási terv
+
+Ez a projekt egyszeri laboratóriumi feladatként készült, ezért nincs szükség hosszú távú karbantartásra vagy rendszeres frissítésekre. A projekt elkészülte után a szoftver nem kerül további fejlesztésre. Ha hibát találunk a labor során, azokat helyben javítjuk.

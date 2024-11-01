@@ -144,6 +144,8 @@ Szabályos lépés             | A rendszer engedélyezi a szabályos lépés v�
 
 Szabálytalan lépés          | A rendszer nem engedélyezi a szabálytalan lépést.
 
+Sakk és Matt ellenőrzése    | A rendszer észleli, ha sakkban vagy mattban van a játékos.
+
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
 **Tesztelő:** Vezetéknév Keresztnév

@@ -163,8 +163,8 @@ Tesztszám | Rövid leírás | Várt eredmény | Eredmény | Megjegyzés
 például. Teszt #01 | Regisztráció | A felhasználó az adatok megadásával sikeresen regisztrálni tud  | A felhasználó sikeresen regisztrált | Nem találtam problémát.
 ... | ... | ... | ... | ...
 
-## 12. Telepítési terv
 
+### 12. Telepítési terv
 
 ## Fizikai telepítési terv: 
 

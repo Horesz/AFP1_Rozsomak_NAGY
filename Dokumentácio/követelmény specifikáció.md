@@ -14,6 +14,8 @@ A cél egy intuitív és felhasználóbarát sakk játék létrehozása. A felha
 
 ## 4. Jelenlegi üzleti folyamatok modellje
 
+Jelenleg, ha a felhasználónak kedve támad sakkozni, gyakran az interneten kell keresgélnie, és olyan online platformokra kell belépnie, ahol a játék élvezete közben folyamatosan hirdetések jelennek meg. Az elérhető játékok minősége nagyon változó, és sok időt vehet igénybe, amíg egy igazán szórakoztató és színvonalas sakk játékot talál. Továbbá, ezek a játékok gyakran nem kínálnak offline játék lehetőséget, így a felhasználók nem tudják élvezni a játékot utazás közben vagy internetkapcsolat nélküli helyzetekben.
+
 ## 5. Igényelt üzleti folyamatok modellje
 
 ## 6. Követelménylista

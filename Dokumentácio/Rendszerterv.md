@@ -104,6 +104,8 @@ Az alkalmazás futtatásához a felhasználóknak egy Android operációs rendsz
 
 ## 8. Architekturális terv
 
+A játékot Kotlin nyelven írjuk, és Android alkalmazásként valósítjuk meg.
+
 ### Webszerver
 
 ### Adatbázis rendszer

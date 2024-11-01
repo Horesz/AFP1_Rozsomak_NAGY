@@ -165,8 +165,11 @@ például. Teszt #01 | Regisztráció | A felhasználó az adatok megadásával 
 
 ## 12. Telepítési terv
 
+
 Fizikai telepítési terv: 
 
 Szoftver telepítési terv: 
+
+A szoftver telepítése egyszerűen elvégezhető az Android áruházból történő letöltéssel. A felhasználónak csak le kell töltenie az alkalmazást, és elindítani a telepítést. Az alkalmazás telepítése után azonnal elérhető és futtatható.
 
 ## 13. Karbantartási terv

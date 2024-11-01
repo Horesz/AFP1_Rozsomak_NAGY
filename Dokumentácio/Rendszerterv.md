@@ -112,6 +112,8 @@ A játékot Kotlin nyelven írjuk, és Android alkalmazásként valósítjuk meg
 
 ### A program elérése, kezelése
 
+A program használatához az alkalmazást le kell tölteni az Android eszközre. Az alkalmazás telepítése után a játék egyszerűen elindítható az ikonjára kattintva.
+
 ## 9. Adatbázis terv
 
 ## 10. Implementációs terv

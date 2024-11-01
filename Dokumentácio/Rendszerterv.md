@@ -71,6 +71,8 @@ Főmenü:
 
    -Új játék: A játékos új játékot kezdhet, ahol két emberi játékos játszik egymás ellen ugyanazon az eszközön.
 
+   -Kilépés: A játékost kilépteti a játékból, és a program futása befejeződik.
+
 ## 6. Fizikai környezet
 
 ### Vásárolt softwarekomponensek és külső rendszerek

@@ -45,11 +45,13 @@
 | K7 | Játék | Start menü | A játék indításakor egy egyszerű start menü jelenik meg, amely lehetőséget ad új játék indítására vagy kilépésre. |
 | K8 | Játék vége képernyő | A játék végén megjelenik egy egyszerű képernyő, amely mutatja a győztest és lehetőséget ad új játék indítására vagy kilépésre. |
 
-| ID | Megnevezés | Leírás |
-| --- | --- | --- |
-| K1 | ... | ... |
-
 ### Nemfunkcionális követelmények
+
+-A felhasználói élmény intuitív legyen, a sakk szabályai következetesen érvényesüljenek.
+
+-Az alkalmazás gyorsan reagáljon a felhasználói műveletekre, minimalizálva a várakozási időt.
+
+-A felhasználók személyes adatai biztonságban maradjanak, mivel az alkalmazás offline működik, és nem igényel személyes adatokat.
 
 | ID | Megnevezés | Leírás |
 | --- | --- | --- |

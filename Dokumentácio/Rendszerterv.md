@@ -53,11 +53,9 @@
 
 -A felhasználók személyes adatai biztonságban maradjanak, mivel az alkalmazás offline működik, és nem igényel személyes adatokat.
 
-| ID | Megnevezés | Leírás |
-| --- | --- | --- |
-| K4 | ... | ... |
-
 ### Támogatott eszközök
+
+Ez az alkalmazás kizárólag Android eszközökön futtatható. Internetkapcsolat nem szükséges, mivel offline módban működik.
 
 ## 5. Funkcionális terv
 

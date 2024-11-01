@@ -136,9 +136,9 @@ A tesztelések célja a rendszer és komponensei funkcionalitásának teljes viz
 
 ### Tesztesetek
 
- | Teszteset | Elvárt eredmény | 
- |-----------|-----------------| 
- | ... | ... |
+Teszteset                   | Elvárt eredmény
+
+Bábu kiválasztása           | A bábu kijelölhető
 
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 

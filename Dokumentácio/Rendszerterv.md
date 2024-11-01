@@ -150,6 +150,8 @@ Emberi lépés ellenőrzése    | A másik játékos megfelelően tud lépni az 
 
 Játék vége                  | A játék vége képernyőn a győztes megjelenik, és lehetőség van új játék indítására.
 
+Eredmény tárolása           | A játék végén a rendszer helyesen eltárolja az eredményt az adatbázisban.
+
 ### A tesztelési jegyzőkönyv kitöltésére egy sablon:
 
 **Tesztelő:** Vezetéknév Keresztnév

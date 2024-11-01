@@ -65,6 +65,12 @@ Ebben a projektben két játékos szerepel, akik ugyanazon az eszközön játsza
 
 ### 5.2 Menühierarchiák
 
+A játék használatához nincs szükség bejelentkezésre vagy fiók létrehozására.
+
+Főmenü:
+
+   -Új játék: A játékos új játékot kezdhet, ahol két emberi játékos játszik egymás ellen ugyanazon az eszközön.
+
 ## 6. Fizikai környezet
 
 ### Vásárolt softwarekomponensek és külső rendszerek

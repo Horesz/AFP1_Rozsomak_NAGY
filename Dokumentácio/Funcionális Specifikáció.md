@@ -14,6 +14,7 @@ Ezek nagy része reklámokat tartalmaz, és internetkapcsolatot igényel, ami cs
 
 ## 4. Igényelt üzleti folyamatok modellje
 
+A felhasználó az alkalmazás megnyitása után bármikor offline módban indíthatja el a játékot, és addig játszhat, ameddig szeretne, internetkapcsolat nélkül, így biztosítva a szórakoztató felhasználói élményt.
 
 ## 5. Követelménylista
 

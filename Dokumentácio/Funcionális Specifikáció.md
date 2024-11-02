@@ -34,6 +34,7 @@ A felhasználó egy egyszerűen kezelhető és jól áttekinthető Android alkal
 
 ## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
 
+A felhasználó a sakkfigurák mozgatásával lépéseket tehet a táblán, amelyet a rendszer validál a sakk szabályainak megfelelően. A játék sakk-matt vagy döntetlen esetében ér véget majd kiírja az eredményt.
 
 ## 8. Képernyőtervek
 

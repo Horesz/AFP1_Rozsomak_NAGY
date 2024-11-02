@@ -1,6 +1,8 @@
 # Funkcionális specifikáció
 ## 1. Jelenlegi helyzet leírása
 
+Jelenleg nincs elegendő, jól kidolgozott sakkjáték Android platformra, amely könnyen elérhető és offline módon is működik. A legtöbb elérhető sakkalkalmazás internetkapcsolatot igényel, és gyakran tele van reklámokkal, ami zavarhatja a felhasználói élményt.
+
 ## 2. Vágyálomrendszer leírása
 
 ## 3. Jelenlegi üzleti folyamatok modellje

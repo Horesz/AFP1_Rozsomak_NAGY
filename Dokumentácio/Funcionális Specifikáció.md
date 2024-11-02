@@ -9,6 +9,8 @@ A cél egy Kotlinban megírt, Android Studio-ban fejlesztett sakkalkalmazás lé
 
 ## 3. Jelenlegi üzleti folyamatok modellje
 
+Jelenleg a telefonos app store-okban csak olyan sakk játékokat találhatunk amelyek a felhasználó számára túl bonyolultnak tűnnek.
+Ezek nagy része reklámokat tartalmaz, és internetkapcsolatot igényel, ami csökkentheti a felhasználói élményt és megnehezíti a minőségi játék megtalálását. Ezen kívül ezek az alkalmazások gyakran változó minőségűek, és nem mindig biztosítanak stabil offline módot.
 
 ## 4. Igényelt üzleti folyamatok modellje
 

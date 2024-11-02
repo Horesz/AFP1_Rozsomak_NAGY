@@ -5,6 +5,8 @@ Jelenleg nincs elegendő, jól kidolgozott sakkjáték Android platformra, amely
 
 ## 2. Vágyálomrendszer leírása
 
+A cél egy Kotlinban megírt, Android Studio-ban fejlesztett sakkalkalmazás létrehozása. A játék a klasszikus sakk szabályait követi, és egyértelmű, intuitív kezelőfelülettel rendelkezik. A felhasználó irányításba veszi a fehér és fekete bábukat és lejátszhat egy menetet barátjával vagy ismerősével. A játék grafikus felülete Android eszközökre optimalizált, és támogatja a standard sakk funkciókat, mint a lépésellenőrzés.
+
 ## 3. Jelenlegi üzleti folyamatok modellje
 
 

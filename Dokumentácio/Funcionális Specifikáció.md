@@ -38,6 +38,7 @@ A felhasználó a sakkfigurák mozgatásával lépéseket tehet a táblán, amel
 
 ## 8. Képernyőtervek
 
+![Képernyőterv](../kepernyoterv.png)
 
 ## 10. Funkció - követelmény megfeleltetése
 

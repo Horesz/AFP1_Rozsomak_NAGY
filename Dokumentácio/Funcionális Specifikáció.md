@@ -53,6 +53,10 @@ K8: A játék végén egy képernyő jelenik meg, amely megmutatja a győztest, 
 
 ## 11 Fogalomszótár
 
+| Fogalom | Leírás |
+| Kotlin | Programozási nyelv, amelyen az androidos sakk alkalmazást elkészítjük |
+| Android Studio | Android alkalmazások fejlesztésére használt program |
+| Sakktábla | 8x8-as négyzetes tábla, ahol a sakkjáték zajlik |
 
 
 

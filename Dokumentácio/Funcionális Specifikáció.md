@@ -30,6 +30,8 @@ A felhasználó az alkalmazás megnyitása után bármikor offline módban indí
 
 ## 6. Használati esetek
 
+A felhasználó egy egyszerűen kezelhető és jól áttekinthető Android alkalmazás segítségével sakkozhat offline módban. Az alkalmazás lehetővé teszi, hogy a felhasználó sakkot játszahasson barátai ellen majd az eredményt megtekinthetjük a képernyőre kiírva.
+
 ## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
 
 

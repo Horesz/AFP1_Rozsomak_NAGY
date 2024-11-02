@@ -42,6 +42,14 @@ A felhasználó a sakkfigurák mozgatásával lépéseket tehet a táblán, amel
 
 ## 10. Funkció - követelmény megfeleltetése
 
+K1: Az alkalmazás elindításakor a képernyőn megjelenik a 8x8-as sakktábla, amelyen a bábuk a kezdő pozícióban vannak, ezzel biztosítva a játékos számára a játék kezdőállását.
+K2: A játékos a bábukra kattintva kiválaszthat egy bábut, amelyet a sakk szabályai szerint mozgathat. Az alkalmazás biztosítja, hogy csak érvényes lépéseket lehessen végrehajtani.
+K3: Minden lépés után a rendszer ellenőrzi a lépés érvényességét, és csak a szabályos lépéseket engedi végrehajtani. Ezzel elkerülhetők a szabálytalan lépések.
+K4: A játék során a rendszer automatikusan és folyamatosan figyeli a sakk és matt helyzeteket, ezzel biztosítva, hogy a játék mindig az aktuális helyzetnek megfelelően folytatódjon vagy fejeződjön be.
+K5: Az alkalmazás lehetőséget biztosít két játékos számára, hogy ugyanazon az eszközön felváltva léphessenek, így emberi ellenfél ellen is játszható a játék.
+K6: A játék végén az alkalmazás elmenti az eredményt egy adatbázisba, amely tartalmazza a győztest és a lépések számát, így a játékosok visszanézhetik a korábbi játszmák eredményeit.
+K7: Az alkalmazás megnyitásakor egy start menü jelenik meg, amely lehetőséget biztosít új játék indítására vagy a programból való kilépésre.
+K8: A játék végén egy képernyő jelenik meg, amely megmutatja a győztest, és lehetőséget ad új játék indítására vagy a kilépésre, ezzel biztosítva a játékos számára a továbblépést vagy a játék befejezését.
 
 ## 11 Fogalomszótár
 

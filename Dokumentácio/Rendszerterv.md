@@ -1,6 +1,13 @@
 # Rendszerterv
 ## 1. A rendszer célja
 
+A rendszerterv célja, hogy egy felhasználóbarát és interaktív sakk alkalmazást fejlesszen ki Android platformra, amely kielégíti a felhasználók igényeit. 
+Az alkalmazás célja a sakk élményének gazdagítása, lehetőséget biztosítva a felhasználók számára, hogy egymás ellen játszhassanak (2 élő személy). 
+
+Hozzáadott célja még a sakk tudásának fejlesztése, tanulási lehetőségeket kínálva, amelyek segítenek a stratégiai gondolkodás és a játék technikai aspektusainak elsajátításában. 
+A hatékony játékélmény fokozása érdekében modern, esztétikus felhasználói felületet alakít ki, amely megkönnyíti a navigációt és a játék menetét.
+A fejlesztői csapat valódi célja az volt, hogy egy olyan alkalmazást hozzon létre, ami egyszerű és nagyszerű. Törekedett a minimalista felhasználói felületre és a könnyen elsajátítható játékra.
+
 
 ## 2. Projektterv
 
@@ -27,6 +34,13 @@
 |Alkalmazásfejlesztés        |Tesztelés                               |         4 |             3 |                      3 |                3 |                   3 |
 
 ### 2.4 Mérföldkövek:
+
+ - 10.30 Funkcionális specifikáció elkészítése
+ - 11.06 Követelmény specifikáció elkészítése
+ - 11.13 Rendszerterv elkészítése
+ - 11.20 Frontend design megtervezése
+ - 11.27 Backend funkciók elkészítése
+ - 12.04 Kész projekt tesztelése, ellenőrzése és leadása
 
 
 ## 3. Üzleti folyamatok modellje

@@ -1,4 +1,4 @@
-package com.example.sakk
+package com.example.projekt
 
 import org.junit.Test
 

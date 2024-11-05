@@ -1,6 +1,9 @@
 package com.example.projekt
 
 class ChessModel {
+    var piecesBox = setOf<ChessPiece>()
+
+    
     override fun toString(): String {
         var desc = " \n"
         for (row in 0..7) {

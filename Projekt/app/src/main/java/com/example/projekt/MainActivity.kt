@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        Log.d(TAG, "$chessModel")
 
         }
     }

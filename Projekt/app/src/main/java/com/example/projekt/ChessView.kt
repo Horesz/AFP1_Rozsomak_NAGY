@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
@@ -37,9 +38,17 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
     override fun onDraw(canvas: Canvas) {
         drawChessBoard(canvas)
+        drawPieces(canvas)
 
-        val whiteQueenBitmap = bitmaps[R.drawable.queen_white]!!
-        canvas.drawBitmap(whiteQueenBitmap, null, Rect(0,0,600,600), paint)
+    }
+
+    private fun drawPieces(canvas: Canvas?){
+        drawPieaceAt(canvas, 0, 0, R.drawable.rook_white)
+    }
+
+    private fun drawPieaceAt(canvas: Canvas?,col: Int, row: Int, resID: Int){
+        val whiteQueenBitmap = bitmaps[resID]!!
+        canvas?.drawBitmap(whiteQueenBitmap, null, RectF(originX + col * cellSide,originY + (7 - row ) * cellSide,originX + (col + 1) * cellSide,originY + ((7 - row) + 1) * cellSide), paint)
     }
 
     private fun loadBitmaps(){

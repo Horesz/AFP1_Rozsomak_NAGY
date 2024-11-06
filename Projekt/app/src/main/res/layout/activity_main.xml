@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.projekt.ChessView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <!--on below line we are creating a grid view-->
-
-    <GridView
-        android:id="@+id/Grid"
-        android:layout_width="match_parent"
-        android:layout_height="670dp"
-        android:background="#FFFFFF"
-        android:horizontalSpacing="6dp"
-        android:numColumns="8"
-        android:verticalSpacing="6dp">
-
-    </GridView>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="61dp"
-        android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="350dp"
-        android:layout_marginBottom="21dp"
-        android:text="Sakk" />
-
-</RelativeLayout>
+</com.example.projekt.ChessView>

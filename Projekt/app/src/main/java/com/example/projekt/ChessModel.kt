@@ -7,29 +7,29 @@ class ChessModel {
         reset()
     }
 
-    private fun reset(){
+    fun reset(){
         piecesBox.removeAll(piecesBox)
         for (i in 0..1){
-            piecesBox.add(ChessPiece(0 + i * 7, row = 0, Player.WHITE, ChessMan.ROOK))
-            piecesBox.add(ChessPiece(0 + i * 7, row = 7, Player.BLACK, ChessMan.ROOK))
+            piecesBox.add(ChessPiece(0 + i * 7, row = 0, Player.WHITE, ChessMan.ROOK, R.drawable.rook_white))
+            piecesBox.add(ChessPiece(0 + i * 7, row = 7, Player.BLACK, ChessMan.ROOK, R.drawable.rook_black))
 
-            piecesBox.add(ChessPiece(1 + i * 5, row = 0, Player.WHITE, ChessMan.KNIGHT))
-            piecesBox.add(ChessPiece(1 + i * 5, row = 7, Player.BLACK, ChessMan.KNIGHT))
+            piecesBox.add(ChessPiece(1 + i * 5, row = 0, Player.WHITE, ChessMan.KNIGHT, R.drawable.knight_white))
+            piecesBox.add(ChessPiece(1 + i * 5, row = 7, Player.BLACK, ChessMan.KNIGHT, R.drawable.knight_black))
 
-            piecesBox.add(ChessPiece(2 + i * 3, row = 0, Player.WHITE, ChessMan.BISHOP))
-            piecesBox.add(ChessPiece(2 + i * 3, row = 7, Player.BLACK, ChessMan.BISHOP))
+            piecesBox.add(ChessPiece(2 + i * 3, row = 0, Player.WHITE, ChessMan.BISHOP, R.drawable.bishop_white))
+            piecesBox.add(ChessPiece(2 + i * 3, row = 7, Player.BLACK, ChessMan.BISHOP, R.drawable.bishop_black))
         }
 
         for (i in 0..7){
-            piecesBox.add(ChessPiece(i, row = 1, Player.WHITE, ChessMan.PAWN))
-            piecesBox.add(ChessPiece(i, row = 6, Player.BLACK, ChessMan.PAWN))
+            piecesBox.add(ChessPiece(i, row = 1, Player.WHITE, ChessMan.PAWN, R.drawable.pawn_white))
+            piecesBox.add(ChessPiece(i, row = 6, Player.BLACK, ChessMan.PAWN, R.drawable.pawn_black))
         }
 
-        piecesBox.add(ChessPiece(3, row = 0, Player.WHITE, ChessMan.QUEEN))
-        piecesBox.add(ChessPiece(3, row = 7, Player.BLACK, ChessMan.QUEEN))
+        piecesBox.add(ChessPiece(3, row = 0, Player.WHITE, ChessMan.QUEEN, R.drawable.queen_white))
+        piecesBox.add(ChessPiece(3, row = 7, Player.BLACK, ChessMan.QUEEN, R.drawable.queen_black))
 
-        piecesBox.add(ChessPiece(4, row = 0, Player.WHITE, ChessMan.KING))
-        piecesBox.add(ChessPiece(4, row = 7, Player.BLACK, ChessMan.KING))
+        piecesBox.add(ChessPiece(4, row = 0, Player.WHITE, ChessMan.KING, R.drawable.king_white))
+        piecesBox.add(ChessPiece(4, row = 7, Player.BLACK, ChessMan.KING, R.drawable.king_black))
 
     }
 

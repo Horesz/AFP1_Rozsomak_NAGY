@@ -43,10 +43,20 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     }
 
     private fun drawPieces(canvas: Canvas?){
-        drawPieaceAt(canvas, 0, 0, R.drawable.rook_white)
+        val chessModel = ChessModel()
+        chessModel.reset()
+
+        for (row in 0..7){
+            for (col in 0..7){
+                val piece = chessModel.pieceAt(col,row)
+                if (piece != null){
+                    drawPieceAt(canvas,col,row,piece.resID)
+                }
+            }
+        }
     }
 
-    private fun drawPieaceAt(canvas: Canvas?,col: Int, row: Int, resID: Int){
+    private fun drawPieceAt(canvas: Canvas?,col: Int, row: Int, resID: Int){
         val whiteQueenBitmap = bitmaps[resID]!!
         canvas?.drawBitmap(whiteQueenBitmap, null, RectF(originX + col * cellSide,originY + (7 - row ) * cellSide,originX + (col + 1) * cellSide,originY + ((7 - row) + 1) * cellSide), paint)
     }

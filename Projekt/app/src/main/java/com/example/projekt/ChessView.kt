@@ -15,12 +15,12 @@ import android.view.View
 import kotlin.math.min
 
 class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
-    private final val scalefactor = .9f
-    private final var originX: Float = 20f
-    private final var originY: Float = 200f
-    private final var cellSide: Float = 130f
-    private final val lightColor = Color.parseColor("#EEEEEE")
-    private final val darkColor = Color.parseColor("#BBBBBB")
+    private val scalefactor = .9f
+    private var originX: Float = 20f
+    private var originY: Float = 200f
+    private var cellSide: Float = 130f
+    private val lightColor = Color.parseColor("#EEEEEE")
+    private val darkColor = Color.parseColor("#BBBBBB")
 
     private final val imgResIDs = setOf(
         R.drawable.bishop_black,
@@ -36,8 +36,8 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
         R.drawable.pawn_black,
         R.drawable.pawn_white
     )
-    private final val bitmaps = mutableMapOf<Int, Bitmap>()
-    private final val paint = Paint()
+    private val bitmaps = mutableMapOf<Int, Bitmap>()
+    private val paint = Paint()
 
     var chessDelegate: ChessDelegate? = null
 
@@ -49,10 +49,10 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
         canvas ?: return
 
-        val chessBoardSide= min(canvas.width, canvas.height) * scalefactor
+        val chessBoardSide= min(width, height) * scalefactor
         cellSide = chessBoardSide / 8f
-        originX = (canvas.width - chessBoardSide) / 2f
-        originY = (canvas.height - chessBoardSide) /2f
+        originX = (width - chessBoardSide) / 2f
+        originY = (height - chessBoardSide) /2f
 
         drawChessBoard(canvas)
         drawPieces(canvas)

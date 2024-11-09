@@ -75,4 +75,9 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
             }
         }
     }
+
+    private fun drawSquareAt(canvas: Canvas?, col: Int, row: Int, isDark: Boolean) {
+        paint.color = if (isDark) darkColor else lightColor
+        canvas?.drawRect(originX + col * cellSide, originY + row * cellSide, originX + (col + 1)* cellSide, originY + (row + 1) * cellSide, paint)
+    }
 }

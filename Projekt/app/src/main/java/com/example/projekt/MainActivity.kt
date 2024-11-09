@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 
 private const val TAG = "MainActivity"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ChessDelegate{
 
     var chessModel = ChessModel()
 
@@ -22,4 +22,8 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "$chessModel")
 
         }
+
+    override fun pieceAt(col: Int, row: Int): ChessPiece? {
+        return chessModel.pieceAt(col, row)
     }
+}

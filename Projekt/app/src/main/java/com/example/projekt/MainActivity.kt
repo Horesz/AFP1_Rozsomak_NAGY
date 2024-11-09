@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-private const val TAG = "MainActivity"
+const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity(), ChessDelegate{
 

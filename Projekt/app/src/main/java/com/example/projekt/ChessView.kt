@@ -48,12 +48,10 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     }
 
     private fun drawPieces(canvas: Canvas?){
-        val chessModel = ChessModel()
-        chessModel.reset()
 
         for (row in 0..7){
             for (col in 0..7){
-                chessModel.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
+                chessDelegate?.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
             }
         }
     }

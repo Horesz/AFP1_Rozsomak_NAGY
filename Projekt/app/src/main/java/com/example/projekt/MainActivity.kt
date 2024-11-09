@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
         setContentView(R.layout.activity_main)
 
         Log.d(TAG, "$chessModel")
-        val chessView = findViewById<ChessView>()
+        val chessView = findViewById<ChessView>(R.id.chess_view)
+        chessView.chessDelegate= this
 
         }
 

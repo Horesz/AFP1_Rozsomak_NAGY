@@ -35,6 +35,8 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private final val bitmaps = mutableMapOf<Int, Bitmap>()
     private final val paint = Paint()
 
+    var chessDelegate: ChessDelegate? = null
+
     init {
         loadBitmaps()
     }

@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
 
         Log.d(TAG, "$chessModel")
 
+
         }
 
     override fun pieceAt(col: Int, row: Int): ChessPiece? {

@@ -7,6 +7,12 @@ class ChessModel {
         reset()
     }
 
+    fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
+        val movingPiece = pieceAt(fromCol, fromRow) ?: return
+        movingPiece.col = toCol
+        movingPiece.row = toRow
+    }
+
     fun reset(){
         piecesBox.removeAll(piecesBox)
         for (i in 0..1){

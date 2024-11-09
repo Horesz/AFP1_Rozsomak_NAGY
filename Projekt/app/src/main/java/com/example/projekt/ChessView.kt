@@ -51,10 +51,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
         for (row in 0..7){
             for (col in 0..7){
-                val piece = chessModel.pieceAt(col,row)
-                if (piece != null){
-                    drawPieceAt(canvas,col,row,piece.resID)
-                }
+                chessModel.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
             }
         }
     }

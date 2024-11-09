@@ -13,12 +13,15 @@ class ChessModel {
 
     fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
         val movingPiece = pieceAt(fromCol, fromRow) ?: return
-        
-        pieceAt(toCol, toRow).let { piecesBox.remove(it)}
+
+        pieceAt(toCol, toRow)?.let {
+            if (it.player == movingPiece.player) {
+                return
+            }
+            piecesBox.remove(it)}
 
         movingPiece.col = toCol
         movingPiece.row = toRow
-
 
     }
 

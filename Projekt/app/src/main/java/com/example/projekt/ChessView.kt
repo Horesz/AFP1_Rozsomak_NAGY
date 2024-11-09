@@ -62,9 +62,15 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         event ?: return false
         when (event.action) {
-            MotionEvent.ACTION_DOWN -> {}
+            MotionEvent.ACTION_DOWN -> {
+                val col = ((event.x-originX)/cellSide).toInt()
+                val row = 7- ((event.x-originX)/cellSide).toInt()
+            }
             MotionEvent.ACTION_MOVE -> {}
-            MotionEvent.ACTION_UP -> {}
+            MotionEvent.ACTION_UP -> {
+                val col = ((event.x-originX)/cellSide).toInt()
+                val row = 7- ((event.x-originX)/cellSide).toInt()
+            }
         }
         return true
     }

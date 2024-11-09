@@ -10,6 +10,7 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import kotlin.math.min
 
@@ -56,6 +57,16 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
         drawChessBoard(canvas)
         drawPieces(canvas)
 
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        event ?: return false
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {}
+            MotionEvent.ACTION_MOVE -> {}
+            MotionEvent.ACTION_UP -> {}
+        }
+        return true
     }
 
     private fun drawPieces(canvas: Canvas){

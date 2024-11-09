@@ -16,6 +16,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private final val originY: Float = 200f
     private final val cellSide: Float = 130f
     private final val lightColor = Color.argb(1f, .9f,.9f,.9f)
+    private final val darkColor = Color.argb(1f, .8f,.8f,.8f)
 
     private final val imgResIDs = setOf(
         R.drawable.bishop_black,

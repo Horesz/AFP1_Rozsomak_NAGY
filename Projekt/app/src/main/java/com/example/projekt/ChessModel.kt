@@ -5,6 +5,10 @@ class ChessModel {
 
     init {
         reset()
+
+        //TODO
+        movePiece(0,0,1,7)
+        movePiece(1,7,1,4)
     }
 
     fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){

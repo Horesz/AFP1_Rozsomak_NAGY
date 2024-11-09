@@ -15,6 +15,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private final val originX: Float = 20f
     private final val originY: Float = 200f
     private final val cellSide: Float = 130f
+
     private final val imgResIDs = setOf(
         R.drawable.bishop_black,
         R.drawable.bishop_white,

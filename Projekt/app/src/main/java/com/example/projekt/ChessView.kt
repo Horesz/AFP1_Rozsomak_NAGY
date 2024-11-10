@@ -40,6 +40,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private val paint = Paint()
 
     private var movingPieceBitmap: Bitmap? = null
+    private var movingPiece: ChessPiece? = null
     private var fromCol: Int = -1
     private var fromRow: Int = -1
     private var movingPieceX = -1f
@@ -73,6 +74,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
                 fromRow = 7- ((event.y-originY)/cellSide).toInt()
 
                 chessDelegate?.pieceAt(fromCol, fromRow)?.let {
+                    movingPiece = it
                     movingPieceBitmap = bitmaps[it.resID]
                 }
             }
@@ -86,6 +88,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
                 val row = 7- ((event.y-originY)/cellSide).toInt()
                 Log.d(TAG, "from ($fromCol, $fromRow) to ($col, $row)")
                 chessDelegate?.movePiece(fromCol, fromRow, col, row)
+                movingPiece = null
                 movingPieceBitmap = null
             }
         }
@@ -96,10 +99,15 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
         for (row in 0..7){
             for (col in 0..7){
-                if (row != fromRow || col != fromCol){
-                    chessDelegate?.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
-                }
+               // if (row != fromRow || col != fromCol){
+               //     chessDelegate?.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
+               // }
+                chessDelegate?.pieceAt(col,row)?.let {
+                    if (it != movingPiece){
+                        drawPieceAt(canvas, col, row, it.resID)
+                    }
 
+                }
             }
         }
 

@@ -8,16 +8,18 @@ class ChessModel {
     }
 
     fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
+        if (fromCol == toCol && fromRow == toRow) return
         val movingPiece = pieceAt(fromCol, fromRow) ?: return
 
         pieceAt(toCol, toRow)?.let {
             if (it.player == movingPiece.player) {
                 return
             }
-            piecesBox.remove(it)}
+            piecesBox.remove(it)
+        }
 
-        movingPiece.col = toCol
-        movingPiece.row = toRow
+        piecesBox.remove(movingPiece)
+        piecesBox.add(ChessPiece(toCol, toRow, movingPiece.player, movingPiece.man, movingPiece.resID))
 
     }
 

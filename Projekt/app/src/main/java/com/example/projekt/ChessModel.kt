@@ -14,10 +14,11 @@ class ChessModel {
             if (it.player == movingPiece.player) {
                 return
             }
-            piecesBox.remove(it)}
+            piecesBox.remove(it)
+        }
 
-        movingPiece.col = toCol
-        movingPiece.row = toRow
+        piecesBox.remove(movingPiece)
+        piecesBox.add(ChessPiece(toCol, toRow, movingPiece.player, movingPiece.man, movingPiece.resID))
 
     }
 

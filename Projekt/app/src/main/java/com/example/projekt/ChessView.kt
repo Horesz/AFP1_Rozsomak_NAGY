@@ -38,6 +38,8 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     )
     private val bitmaps = mutableMapOf<Int, Bitmap>()
     private val paint = Paint()
+
+    private var movingPieceBitmap: Bitmap? = null
     private var fromCol: Int = -1
     private var fromRow: Int = -1
     private var movingPieceX = -1f
@@ -69,6 +71,10 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
             MotionEvent.ACTION_DOWN -> {
                 fromCol = ((event.x-originX)/cellSide).toInt()
                 fromRow = 7- ((event.y-originY)/cellSide).toInt()
+
+                chessDelegate?.pieceAt(fromCol, fromRow)?.let {
+                    movingPieceBitmap = bitmaps[it.resID]
+                }
             }
             MotionEvent.ACTION_MOVE -> {
                 movingPieceX = event.x
@@ -80,6 +86,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
                 val row = 7- ((event.y-originY)/cellSide).toInt()
                 Log.d(TAG, "from ($fromCol, $fromRow) to ($col, $row)")
                 chessDelegate?.movePiece(fromCol, fromRow, col, row)
+                movingPieceBitmap = null
             }
         }
         return true
@@ -96,15 +103,14 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
             }
         }
 
-        chessDelegate?.pieceAt(fromCol, fromRow)?.let {
-            val whiteQueenBitmap = bitmaps[it.resID]!!
-            canvas.drawBitmap(whiteQueenBitmap, null, RectF(movingPieceX - cellSide/2, movingPieceY - cellSide/2,movingPieceX + cellSide/2,movingPieceY + cellSide/2), paint)
+        movingPieceBitmap?.let {
+            canvas.drawBitmap(it, null, RectF(movingPieceX - cellSide/2, movingPieceY - cellSide/2,movingPieceX + cellSide/2,movingPieceY + cellSide/2), paint)
         }
     }
 
     private fun drawPieceAt(canvas: Canvas,col: Int, row: Int, resID: Int){
-        val whiteQueenBitmap = bitmaps[resID]!!
-        canvas.drawBitmap(whiteQueenBitmap, null, RectF(originX + col * cellSide,originY + (7 - row ) * cellSide,originX + (col + 1) * cellSide,originY + ((7 - row) + 1) * cellSide), paint)
+        val bitmap = bitmaps[resID]!!
+        canvas.drawBitmap(bitmap, null, RectF(originX + col * cellSide,originY + (7 - row ) * cellSide,originX + (col + 1) * cellSide,originY + ((7 - row) + 1) * cellSide), paint)
     }
 
     private fun loadBitmaps(){

@@ -37,18 +37,17 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
 
     }
 
-    override fun pieceAt(col: Int, row: Int): ChessPiece? {
-        return ChessGame.pieceAt(col, row)
+    override fun pieceAt(square: Square): ChessPiece? {
+        return ChessGame.pieceAt(square)
     }
 
-    override fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
+    override fun movePiece(from: Square, to: Square) {
 
-        Log.d(TAG, "$fromCol, $fromRow, $toCol, $toRow")
-        ChessGame.movePiece(fromCol, fromRow, toCol, toRow)
+        ChessGame.movePiece(from, to)
         chessView.invalidate()
 
         printWriter.let {
-            val moveStr = "$fromCol, $fromRow, $toCol, $toRow"
+            val moveStr = "${from.col}, ${from.row}, ${to.col}, ${to.row}"
             Executors.newSingleThreadExecutor().execute{
                 it?.println(moveStr)
             }

@@ -80,7 +80,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
                 fromCol = ((event.x-originX)/cellSide).toInt()
                 fromRow = 7- ((event.y-originY)/cellSide).toInt()
 
-                chessDelegate?.pieceAt(fromCol, fromRow)?.let {
+                chessDelegate?.pieceAt(Square(fromCol,fromRow))?.let {
                     movingPiece = it
                     movingPieceBitmap = bitmaps[it.resID]
                 }
@@ -96,7 +96,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
                 if(fromCol != col || fromRow != row)
                 {
-                    chessDelegate?.movePiece(fromCol, fromRow, col, row)
+                    chessDelegate?.movePiece(Square(fromCol,fromRow),Square(col,row))
                 }
 
                 movingPiece = null
@@ -114,7 +114,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
                // if (row != fromRow || col != fromCol){
                //     chessDelegate?.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
                // }
-                chessDelegate?.pieceAt(col,row)?.let { piece ->
+                chessDelegate?.pieceAt(Square(col,row))?.let { piece ->
                     if (piece != movingPiece){
                         drawPieceAt(canvas, col, row, piece.resID)
                     }

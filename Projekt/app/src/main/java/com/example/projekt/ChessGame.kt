@@ -9,7 +9,11 @@ object ChessGame {
         reset()
     }
 
-    fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
+    fun movePiece(from: Square, to: Square){
+        movePiece(from.col,from.row,to.col,to.row)
+    }
+
+    private fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
         if (fromCol == toCol && fromRow == toRow) return
         val movingPiece = pieceAt(fromCol, fromRow) ?: return
 
@@ -51,7 +55,11 @@ object ChessGame {
 
     }
 
-    fun pieceAt(col: Int, row: Int) : ChessPiece?{
+    fun pieceAt(square: Square): ChessPiece?{
+        return pieceAt(square.col, square.row)
+    }
+
+    private fun pieceAt(col: Int, row: Int) : ChessPiece?{
         for (piece in piecesBox){
             if(col == piece.col && row == piece.row){
                 return  piece
@@ -59,6 +67,7 @@ object ChessGame {
         }
         return null
     }
+
 
     override fun toString(): String {
         var desc = " \n"

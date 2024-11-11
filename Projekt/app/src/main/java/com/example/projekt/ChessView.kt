@@ -80,7 +80,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
                 fromCol = ((event.x-originX)/cellSide).toInt()
                 fromRow = 7- ((event.y-originY)/cellSide).toInt()
 
-                chessDelegate?.pieceAt(fromCol, fromRow)?.let {
+                chessDelegate?.pieceAt(Square(fromCol,fromRow))?.let {
                     movingPiece = it
                     movingPieceBitmap = bitmaps[it.resID]
                 }
@@ -96,7 +96,7 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
                 if(fromCol != col || fromRow != row)
                 {
-                    chessDelegate?.movePiece(fromCol, fromRow, col, row)
+                    chessDelegate?.movePiece(Square(fromCol,fromRow),Square(col,row))
                 }
 
                 movingPiece = null
@@ -108,19 +108,16 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     }
 
     private fun drawPieces(canvas: Canvas){
-
-        for (row in 0 until 8){
-            for (col in 0 until 8){
+        for (row in 0 until 8)
+            for (col in 0 until 8)
                // if (row != fromRow || col != fromCol){
                //     chessDelegate?.pieceAt(col,row)?.let {drawPieceAt(canvas, col, row, it.resID)}
                // }
-                chessDelegate?.pieceAt(col,row)?.let {piece ->
+                chessDelegate?.pieceAt(Square(col,row))?.let { piece ->
                     if (piece != movingPiece){
                         drawPieceAt(canvas, col, row, piece.resID)
                     }
 
-                }
-            }
         }
 
         movingPieceBitmap?.let {
@@ -137,14 +134,13 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
         }
 
     private fun drawChessBoard(canvas: Canvas){
-        for (row in 0 until 8){
-            for (col in 0 until 8){
+        for (row in 0 until 8)
+            for (col in 0 until 8)
                 drawSquareAt(canvas, col, row, (col + row) % 2 == 1)
 
          //       paint.color = if ((i + j) % 2 == 1) darkColor else lightColor
            //     canvas?.drawRect(originX + i * cellSide, originY + j * cellSide, originX + (i + 1)* cellSide, originY + (j + 1) * cellSide, paint)
-            }
-        }
+
     }
 
     private fun drawSquareAt(canvas: Canvas, col: Int, row: Int, isDark: Boolean) {

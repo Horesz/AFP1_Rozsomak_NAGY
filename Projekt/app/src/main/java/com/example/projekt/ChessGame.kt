@@ -1,13 +1,43 @@
 package com.example.projekt
 
+import kotlin.math.abs
+
 object ChessGame {
-    var piecesBox = mutableSetOf<ChessPiece>()
+    private var piecesBox = mutableSetOf<ChessPiece>()
 
     init {
         reset()
     }
 
-    fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
+    fun clear(){
+        piecesBox.removeAll(piecesBox)
+    }
+
+    fun addPiece(piece: ChessPiece){
+        piecesBox.add(piece)
+    }
+
+    fun canKnightMove(from: Square, to: Square): Boolean{
+        return abs(from.col - to.col) == 2 && abs(from.row - to.row) == 1 ||
+                abs(from.col - to.col) == 1 && abs(from.row - to.row) == 2
+    }
+
+    fun canMove(from: Square, to: Square): Boolean{
+        val movingPiece = pieceAt(from) ?: return false
+        when(movingPiece.man){
+            ChessMan.KNIGHT -> return canKnightMove(from, to)
+            else -> {}
+        }
+        return true
+    }
+
+    fun movePiece(from: Square, to: Square){
+        if (canMove(from, to)){
+            movePiece(from.col,from.row,to.col,to.row)
+        }
+    }
+
+    private fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
         if (fromCol == toCol && fromRow == toRow) return
         val movingPiece = pieceAt(fromCol, fromRow) ?: return
 
@@ -19,85 +49,44 @@ object ChessGame {
         }
 
         piecesBox.remove(movingPiece)
-        piecesBox.add(movingPiece.copy(col = toCol, row = toRow))
+        addPiece(movingPiece.copy(col = toCol, row = toRow))
+
     }
 
-    fun reset() {
-        piecesBox.removeAll(piecesBox)
-        for (i in 0 until 2) {
-            piecesBox.add(
-                ChessPiece(
-                    0 + i * 7,
-                    0,
-                    Player.WHITE,
-                    ChessMan.ROOK,
-                    R.drawable.rook_white
-                )
-            )
-            piecesBox.add(
-                ChessPiece(
-                    0 + i * 7,
-                    7,
-                    Player.BLACK,
-                    ChessMan.ROOK,
-                    R.drawable.rook_black
-                )
-            )
+    fun reset(){
+        clear()
+        for (i in 0 until 2){
+            addPiece(ChessPiece(0 + i * 7, row = 0, Player.WHITE, ChessMan.ROOK, R.drawable.rook_white))
+            addPiece(ChessPiece(0 + i * 7, row = 7, Player.BLACK, ChessMan.ROOK, R.drawable.rook_black))
 
-            piecesBox.add(
-                ChessPiece(
-                    1 + i * 5,
-                    0,
-                    Player.WHITE,
-                    ChessMan.KNIGHT,
-                    R.drawable.knight_white
-                )
-            )
-            piecesBox.add(
-                ChessPiece(
-                    1 + i * 5,
-                    7,
-                    Player.BLACK,
-                    ChessMan.KNIGHT,
-                    R.drawable.knight_black
-                )
-            )
+            addPiece(ChessPiece(1 + i * 5, row = 0, Player.WHITE, ChessMan.KNIGHT, R.drawable.knight_white))
+            addPiece(ChessPiece(1 + i * 5, row = 7, Player.BLACK, ChessMan.KNIGHT, R.drawable.knight_black))
 
-            piecesBox.add(
-                ChessPiece(
-                    2 + i * 3,
-                    0,
-                    Player.WHITE,
-                    ChessMan.BISHOP,
-                    R.drawable.bishop_white
-                )
-            )
-            piecesBox.add(
-                ChessPiece(
-                    2 + i * 3,
-                    7,
-                    Player.BLACK,
-                    ChessMan.BISHOP,
-                    R.drawable.bishop_black
-                )
-            )
+            addPiece(ChessPiece(2 + i * 3, row = 0, Player.WHITE, ChessMan.BISHOP, R.drawable.bishop_white))
+            addPiece(ChessPiece(2 + i * 3, row = 7, Player.BLACK, ChessMan.BISHOP, R.drawable.bishop_black))
         }
 
-        for (i in 0 until 8) {
-            piecesBox.add(ChessPiece(i, 1, Player.WHITE, ChessMan.PAWN, R.drawable.pawn_white))
-            piecesBox.add(ChessPiece(i, 6, Player.BLACK, ChessMan.PAWN, R.drawable.pawn_black))
+        for (i in 0 until 8){
+            addPiece(ChessPiece(i, row = 1, Player.WHITE, ChessMan.PAWN, R.drawable.pawn_white))
+            addPiece(ChessPiece(i, row = 6, Player.BLACK, ChessMan.PAWN, R.drawable.pawn_black))
         }
 
-        piecesBox.add(ChessPiece(3, 0, Player.WHITE, ChessMan.QUEEN, R.drawable.queen_white))
-        piecesBox.add(ChessPiece(3, 7, Player.BLACK, ChessMan.QUEEN, R.drawable.queen_black))
-        piecesBox.add(ChessPiece(4, 0, Player.WHITE, ChessMan.KING, R.drawable.king_white))
-        piecesBox.add(ChessPiece(4, 7, Player.BLACK, ChessMan.KING, R.drawable.king_black))
+        addPiece(ChessPiece(3, row = 0, Player.WHITE, ChessMan.QUEEN, R.drawable.queen_white))
+        addPiece(ChessPiece(3, row = 7, Player.BLACK, ChessMan.QUEEN, R.drawable.queen_black))
+
+        addPiece(ChessPiece(4, row = 0, Player.WHITE, ChessMan.KING, R.drawable.king_white))
+        addPiece(ChessPiece(4, row = 7, Player.BLACK, ChessMan.KING, R.drawable.king_black))
+
     }
 
-    fun pieceAt(col: Int, row: Int): ChessPiece? {
-        for (piece in piecesBox) {
-            if (col == piece.col && row == piece.row) {
-                return piece
+    fun pieceAt(square: Square): ChessPiece?{
+        return pieceAt(square.col, square.row)
+    }
+
+    private fun pieceAt(col: Int, row: Int) : ChessPiece?{
+        for (piece in piecesBox){
+            if(col == piece.col && row == piece.row){
+                return  piece
             }
         }
         return null
@@ -106,20 +95,25 @@ object ChessGame {
     override fun toString(): String {
         var desc = " \n"
         for (row in 7 downTo 0) {
-            desc += "$row"
+
+            val r = 7 - row
+            desc += "$r"
             for (col in 0 until 8) {
+
                 desc += " "
-                desc += pieceAt(col, row)?.let {
+                desc += pieceAt(col,r)?.let {
                     val white = it.player == Player.WHITE
-                    when (it.man) {
-                        ChessMan.KING -> if (white) "k" else "K"
-                        ChessMan.QUEEN -> if (white) "q" else "Q"
-                        ChessMan.BISHOP -> if (white) "b" else "B"
-                        ChessMan.ROOK -> if (white) "r" else "R"
-                        ChessMan.KNIGHT -> if (white) "n" else "N"
-                        ChessMan.PAWN -> if (white) "p" else "P"
-                    }
-                } ?: "."
+                    desc += " "
+                    when (it.man){
+                        ChessMan.KING -> {if (white) " k" else " K"}
+                        ChessMan.QUEEN -> {if (white) " q" else " Q"}
+                        ChessMan.BISHOP -> {if (white) " b" else " B"}
+                        ChessMan.ROOK -> {if (white) " r" else " R"}
+                        ChessMan.KNIGHT -> {if (white) " n" else " N"}
+                        ChessMan.PAWN -> {if (white) " p" else " P"}
+                    } ?: "."
+                }
+
             }
             desc += "\n"
         }

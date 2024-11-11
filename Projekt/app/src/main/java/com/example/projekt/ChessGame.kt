@@ -24,7 +24,7 @@ object ChessGame {
 
     fun reset() {
         piecesBox.removeAll(piecesBox)
-        for (i in 0..1) {
+        for (i in 0 until 2) {
             piecesBox.add(
                 ChessPiece(
                     0 + i * 7,
@@ -83,7 +83,7 @@ object ChessGame {
             )
         }
 
-        for (i in 0..7) {
+        for (i in 0 until 8) {
             piecesBox.add(ChessPiece(i, 1, Player.WHITE, ChessMan.PAWN, R.drawable.pawn_white))
             piecesBox.add(ChessPiece(i, 6, Player.BLACK, ChessMan.PAWN, R.drawable.pawn_black))
         }
@@ -107,7 +107,7 @@ object ChessGame {
         var desc = " \n"
         for (row in 7 downTo 0) {
             desc += "$row"
-            for (col in 0..7) {
+            for (col in 0 until 8) {
                 desc += " "
                 desc += pieceAt(col, row)?.let {
                     val white = it.player == Player.WHITE

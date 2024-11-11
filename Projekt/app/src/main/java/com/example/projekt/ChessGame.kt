@@ -1,12 +1,16 @@
 package com.example.projekt
 
 object ChessGame {
-    var piecesBox = mutableSetOf<ChessPiece>()
+    private var piecesBox = mutableSetOf<ChessPiece>()
 
 
 
     init {
         reset()
+    }
+
+    fun clear(){
+        piecesBox.removeAll(piecesBox)
     }
 
     fun movePiece(from: Square, to: Square){
@@ -30,7 +34,7 @@ object ChessGame {
     }
 
     fun reset(){
-        piecesBox.removeAll(piecesBox)
+        clear()
         for (i in 0 until 2){
             piecesBox.add(ChessPiece(0 + i * 7, row = 0, Player.WHITE, ChessMan.ROOK, R.drawable.rook_white))
             piecesBox.add(ChessPiece(0 + i * 7, row = 7, Player.BLACK, ChessMan.ROOK, R.drawable.rook_black))

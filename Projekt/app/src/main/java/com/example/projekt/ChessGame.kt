@@ -72,13 +72,13 @@ object ChessGame {
                 } else{
                     val white = piece.player == Player.WHITE
                     desc += " "
-                    when (piece.man){
-                        ChessMan.KING -> {desc += if(piece.player == Player.WHITE) " k" else " K"}
-                        ChessMan.QUEEN -> {desc += if(piece.player == Player.WHITE) " q" else " Q"}
-                        ChessMan.BISHOP -> {desc += if(piece.player == Player.WHITE) " b" else " B"}
-                        ChessMan.ROOK -> {desc += if(piece.player == Player.WHITE) " r" else " R"}
-                        ChessMan.KNIGHT -> {desc += if(piece.player == Player.WHITE) " n" else " N"}
-                        ChessMan.PAWN -> {desc += if(piece.player == Player.WHITE) " p" else " P"}
+                    desc += when (piece.man){
+                        ChessMan.KING -> {if (white) " k" else " K"}
+                        ChessMan.QUEEN -> {if (white) " q" else " Q"}
+                        ChessMan.BISHOP -> {if (white) " b" else " B"}
+                        ChessMan.ROOK -> {if (white) " r" else " R"}
+                        ChessMan.KNIGHT -> {if (white) " n" else " N"}
+                        ChessMan.PAWN -> {if (white) " p" else " P"}
                     }
                 }
             }

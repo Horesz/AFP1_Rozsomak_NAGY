@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
             chessView.invalidate()
         }
 
-        }
+    }
 
     override fun pieceAt(col: Int, row: Int): ChessPiece? {
         return chessModel.pieceAt(col, row)
@@ -41,12 +41,8 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
     override fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
 
         Log.d(TAG, "$fromCol, $fromRow, $toCol, $toRow")
-        if(fromCol == toCol && fromRow == toRow){
-            return
-        }
-
         chessModel.movePiece(fromCol, fromRow, toCol, toRow)
-        findViewById<ChessView>(R.id.chess_view).invalidate()
+        chessView.invalidate()
 
         printWriter.let {
             val moveStr = "$fromCol, $fromRow, $toCol, $toRow"

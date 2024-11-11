@@ -1,6 +1,7 @@
 package com.example.projekt
 
 import android.nfc.Tag
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -15,13 +16,16 @@ const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity(), ChessDelegate{
 
+    private val PORT: Int = 50001
     private lateinit var chessView: ChessView
     private var printWriter: PrintWriter? = null
+    private val isEmulator = Build.FINGERPRINT.contains("generic")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
 
         chessView = findViewById<ChessView>(R.id.chess_view)
         chessView.chessDelegate = this

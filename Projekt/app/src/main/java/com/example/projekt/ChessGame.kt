@@ -66,21 +66,21 @@ object ChessGame {
             val r = 7 - row
             desc += "$r"
             for (col in 0..7) {
-                val piece = pieceAt(col,row)
-                if (piece == null){
-                    desc += " ."
-                } else{
-                    val white = piece.player == Player.WHITE
+
+                desc += " "
+                desc += pieceAt(col,r)?.let {
+                    val white = it.player == Player.WHITE
                     desc += " "
-                    desc += when (piece.man){
+                    when (it.man){
                         ChessMan.KING -> {if (white) " k" else " K"}
                         ChessMan.QUEEN -> {if (white) " q" else " Q"}
                         ChessMan.BISHOP -> {if (white) " b" else " B"}
                         ChessMan.ROOK -> {if (white) " r" else " R"}
                         ChessMan.KNIGHT -> {if (white) " n" else " N"}
                         ChessMan.PAWN -> {if (white) " p" else " P"}
-                    }
+                    } ?: "."
                 }
+
             }
             desc += "\n"
         }

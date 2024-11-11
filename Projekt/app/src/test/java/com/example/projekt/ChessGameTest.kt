@@ -9,9 +9,17 @@ class ChessGameTest : TestCase() {
         assertTrue(ChessGame.toString().contains("0 r n b q k b n r"))
     }
 
-    fun testMovePiece() {}
+    fun testMovePiece() {
+        assertNotNull(ChessGame.pieceAt(0, 2))
+        ChessGame.movePiece(0, 1, 0, 2)
+        assertNotNull(ChessGame.pieceAt(0, 2))
+    }
 
-    fun testReset() {}
+    fun testReset() {
+        assertNotNull(ChessGame.pieceAt(0, 2))
+        ChessGame.movePiece(0, 1, 0, 2)
+        assertNotNull(ChessGame.pieceAt(0, 2))
+    }
 
     fun testPieceAt() {
         assertNotNull(ChessGame.pieceAt(0, 0))

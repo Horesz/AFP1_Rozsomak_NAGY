@@ -3,6 +3,7 @@ package com.example.projekt
 import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,14 +13,21 @@ const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity(), ChessDelegate{
 
-    var chessModel = ChessModel()
+    private var chessModel = ChessModel()
+    private lateinit var chessView: ChessView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        findViewById<ChessView>(R.id.chess_view).chessDelegate= this
+        chessView = findViewById<ChessView>(R.id.chess_view)
+        chessView.chessDelegate = this
+
+        findViewById<Button>(R.id.reset_button).setOnClickListener{
+            chessModel.reset()
+            chessView.invalidate()
+        }
 
         }
 

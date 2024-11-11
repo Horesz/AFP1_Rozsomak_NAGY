@@ -13,6 +13,14 @@ object ChessGame {
         piecesBox.removeAll(piecesBox)
     }
 
+    fun addPiece(piece: ChessPiece){
+        piecesBox.add(piece)
+    }
+
+    fun canKnightMove(from: Square, to: Square): Boolean{
+        return false
+    }
+
     fun movePiece(from: Square, to: Square){
         movePiece(from.col,from.row,to.col,to.row)
     }
@@ -29,33 +37,33 @@ object ChessGame {
         }
 
         piecesBox.remove(movingPiece)
-        piecesBox.add(movingPiece.copy(col = toCol, row = toRow))
+        addPiece(movingPiece.copy(col = toCol, row = toRow))
 
     }
 
     fun reset(){
         clear()
         for (i in 0 until 2){
-            piecesBox.add(ChessPiece(0 + i * 7, row = 0, Player.WHITE, ChessMan.ROOK, R.drawable.rook_white))
-            piecesBox.add(ChessPiece(0 + i * 7, row = 7, Player.BLACK, ChessMan.ROOK, R.drawable.rook_black))
+            addPiece(ChessPiece(0 + i * 7, row = 0, Player.WHITE, ChessMan.ROOK, R.drawable.rook_white))
+            addPiece(ChessPiece(0 + i * 7, row = 7, Player.BLACK, ChessMan.ROOK, R.drawable.rook_black))
 
-            piecesBox.add(ChessPiece(1 + i * 5, row = 0, Player.WHITE, ChessMan.KNIGHT, R.drawable.knight_white))
-            piecesBox.add(ChessPiece(1 + i * 5, row = 7, Player.BLACK, ChessMan.KNIGHT, R.drawable.knight_black))
+            addPiece(ChessPiece(1 + i * 5, row = 0, Player.WHITE, ChessMan.KNIGHT, R.drawable.knight_white))
+            addPiece(ChessPiece(1 + i * 5, row = 7, Player.BLACK, ChessMan.KNIGHT, R.drawable.knight_black))
 
-            piecesBox.add(ChessPiece(2 + i * 3, row = 0, Player.WHITE, ChessMan.BISHOP, R.drawable.bishop_white))
-            piecesBox.add(ChessPiece(2 + i * 3, row = 7, Player.BLACK, ChessMan.BISHOP, R.drawable.bishop_black))
+            addPiece(ChessPiece(2 + i * 3, row = 0, Player.WHITE, ChessMan.BISHOP, R.drawable.bishop_white))
+            addPiece(ChessPiece(2 + i * 3, row = 7, Player.BLACK, ChessMan.BISHOP, R.drawable.bishop_black))
         }
 
         for (i in 0 until 8){
-            piecesBox.add(ChessPiece(i, row = 1, Player.WHITE, ChessMan.PAWN, R.drawable.pawn_white))
-            piecesBox.add(ChessPiece(i, row = 6, Player.BLACK, ChessMan.PAWN, R.drawable.pawn_black))
+            addPiece(ChessPiece(i, row = 1, Player.WHITE, ChessMan.PAWN, R.drawable.pawn_white))
+            addPiece(ChessPiece(i, row = 6, Player.BLACK, ChessMan.PAWN, R.drawable.pawn_black))
         }
 
-        piecesBox.add(ChessPiece(3, row = 0, Player.WHITE, ChessMan.QUEEN, R.drawable.queen_white))
-        piecesBox.add(ChessPiece(3, row = 7, Player.BLACK, ChessMan.QUEEN, R.drawable.queen_black))
+        addPiece(ChessPiece(3, row = 0, Player.WHITE, ChessMan.QUEEN, R.drawable.queen_white))
+        addPiece(ChessPiece(3, row = 7, Player.BLACK, ChessMan.QUEEN, R.drawable.queen_black))
 
-        piecesBox.add(ChessPiece(4, row = 0, Player.WHITE, ChessMan.KING, R.drawable.king_white))
-        piecesBox.add(ChessPiece(4, row = 7, Player.BLACK, ChessMan.KING, R.drawable.king_black))
+        addPiece(ChessPiece(4, row = 0, Player.WHITE, ChessMan.KING, R.drawable.king_white))
+        addPiece(ChessPiece(4, row = 7, Player.BLACK, ChessMan.KING, R.drawable.king_black))
 
     }
 

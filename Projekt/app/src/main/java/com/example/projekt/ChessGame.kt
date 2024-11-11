@@ -1,5 +1,7 @@
 package com.example.projekt
 
+import kotlin.math.abs
+
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()
 
@@ -18,7 +20,8 @@ object ChessGame {
     }
 
     fun canKnightMove(from: Square, to: Square): Boolean{
-        return false
+        return abs(from.col - to.col) == 2 && abs(from.row - to.row) == 1 ||
+                abs(from.col - to.col) == 1 && abs(from.row - to.row) == 2
     }
 
     fun movePiece(from: Square, to: Square){

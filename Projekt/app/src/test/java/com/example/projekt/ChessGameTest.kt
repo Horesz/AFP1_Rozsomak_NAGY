@@ -19,6 +19,8 @@ class ChessGameTest : TestCase() {
         assertNotNull(ChessGame.pieceAt(0, 2))
         ChessGame.movePiece(0, 1, 0, 2)
         assertNotNull(ChessGame.pieceAt(0, 2))
+        ChessGame.reset()
+        assertNull(ChessGame.pieceAt(0, 2))
     }
 
     fun testPieceAt() {

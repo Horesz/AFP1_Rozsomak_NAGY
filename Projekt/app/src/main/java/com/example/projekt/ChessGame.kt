@@ -19,7 +19,7 @@ object ChessGame {
         }
 
         piecesBox.remove(movingPiece)
-        piecesBox.add(ChessPiece(toCol, toRow, movingPiece.player, movingPiece.man, movingPiece.resID))
+        piecesBox.add(movingPiece.copy(col = toCol, row = toRow))
 
     }
 

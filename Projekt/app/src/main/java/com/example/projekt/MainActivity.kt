@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.io.PrintWriter
+import java.util.concurrent.Executors
 
 const val TAG = "MainActivity"
 
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
 
     private var chessModel = ChessModel()
     private lateinit var chessView: ChessView
+    private var printWriter: PrintWriter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,5 +41,13 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
     override fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
         chessModel.movePiece(fromCol, fromRow, toCol, toRow)
         findViewById<ChessView>(R.id.chess_view).invalidate()
+
+        printWriter.let {
+            val moveStr = "$fromCol, $fromRow, $toCol, $toRow"
+            Log.d(TAG, moveStr)
+            Executors.newSingleThreadExecutor().execute{
+                it?.println(moveStr)
+            }
+        }
     }
 }

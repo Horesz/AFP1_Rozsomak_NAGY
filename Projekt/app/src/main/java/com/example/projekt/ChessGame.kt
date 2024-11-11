@@ -5,8 +5,6 @@ import kotlin.math.abs
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()
 
-
-
     init {
         reset()
     }
@@ -94,10 +92,10 @@ object ChessGame {
         return null
     }
 
-
     override fun toString(): String {
         var desc = " \n"
         for (row in 7 downTo 0) {
+
             val r = 7 - row
             desc += "$r"
             for (col in 0 until 8) {

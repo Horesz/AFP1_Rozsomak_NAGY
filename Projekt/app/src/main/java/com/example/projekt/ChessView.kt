@@ -108,7 +108,6 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     }
 
     private fun drawPieces(canvas: Canvas){
-
         for (row in 0 until 8)
             for (col in 0 until 8)
                // if (row != fromRow || col != fromCol){
@@ -126,16 +125,13 @@ class ChessView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
         }
     }
 
-    private fun drawPieceAt(canvas: Canvas,col: Int, row: Int, resID: Int){
-        val bitmap = bitmaps[resID]!!
-        canvas.drawBitmap(bitmap, null, RectF(originX + col * cellSide,originY + (7 - row ) * cellSide,originX + (col + 1) * cellSide,originY + ((7 - row) + 1) * cellSide), paint)
-    }
+    private fun drawPieceAt(canvas: Canvas,col: Int, row: Int, resID: Int) =
+        canvas.drawBitmap(bitmaps[resID]!!, null, RectF(originX + col * cellSide,originY + (7 - row ) * cellSide,originX + (col + 1) * cellSide,originY + ((7 - row) + 1) * cellSide), paint)
 
-    private fun loadBitmaps(){
-        imgResIDs.forEach{
-            bitmaps[it] = BitmapFactory.decodeResource(resources, it)
+    private fun loadBitmaps() =
+        imgResIDs.forEach{imageResID ->
+            bitmaps[imageResID] = BitmapFactory.decodeResource(resources, imageResID)
         }
-    }
 
     private fun drawChessBoard(canvas: Canvas){
         for (row in 0 until 8)

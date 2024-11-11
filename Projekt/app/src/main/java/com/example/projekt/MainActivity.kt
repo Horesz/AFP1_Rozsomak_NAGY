@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity(), ChessDelegate{
     override fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
 
         Log.d(TAG, "$fromCol, $fromRow, $toCol, $toRow")
+        if(fromCol == toCol && fromRow == toRow){
+            return
+        }
 
         chessModel.movePiece(fromCol, fromRow, toCol, toRow)
         findViewById<ChessView>(R.id.chess_view).invalidate()

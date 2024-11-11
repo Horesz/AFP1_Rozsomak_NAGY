@@ -24,8 +24,19 @@ object ChessGame {
                 abs(from.col - to.col) == 1 && abs(from.row - to.row) == 2
     }
 
+    fun canMove(from: Square, to: Square): Boolean{
+        val movingPiece = pieceAt(from) ?: return false
+        when(movingPiece.man){
+            ChessMan.KNIGHT -> return canKnightMove(from, to)
+            else -> {}
+        }
+        return true
+    }
+
     fun movePiece(from: Square, to: Square){
-        movePiece(from.col,from.row,to.col,to.row)
+        if (canMove(from, to)){
+            movePiece(from.col,from.row,to.col,to.row)
+        }
     }
 
     private fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){

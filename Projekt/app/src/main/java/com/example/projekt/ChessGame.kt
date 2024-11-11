@@ -3,6 +3,8 @@ package com.example.projekt
 object ChessGame {
     var piecesBox = mutableSetOf<ChessPiece>()
 
+
+
     init {
         reset()
     }

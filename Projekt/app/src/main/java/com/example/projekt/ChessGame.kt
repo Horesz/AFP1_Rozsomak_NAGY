@@ -34,7 +34,8 @@ object ChessGame {
         val gap = abs(from.col - to.col) - 1
         if (gap == 0) return true
         for (i in 1..gap){
-            if (pieceAt(Square(from.col + i,from.row)) != null){
+            val nextCol = if (to.col > from.col) from.col + i else from.col - 1
+            if (pieceAt(Square(nextCol,from.row)) != null){
                 return false
             }
         }

@@ -31,6 +31,14 @@ object ChessGame {
 
     private fun isClearHorizontallyBetween(from: Square,to: Square): Boolean{
         if(from.row != to.row) return false
+        val gap = abs(from.col - to.col) - 1
+        if (gap == 0) return true
+        for (i in 1..gap){
+            if (pieceAt(Square(from.col + i,from.row)) != null){
+                return false
+            }
+        }
+        return true
     }
 
     fun canMove(from: Square, to: Square): Boolean{

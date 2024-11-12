@@ -23,14 +23,24 @@ object ChessGame {
     }
 
     fun canRookMove(from: Square,to: Square): Boolean{
+        if(from.col == to.col || from.row == to.row){
+            return true
+        }
         return false
     }
 
     fun canMove(from: Square, to: Square): Boolean{
+        if(from.col == to.col && from.row == to.row){
+            return false
+        }
         val movingPiece = pieceAt(from) ?: return false
         when(movingPiece.man){
             ChessMan.KNIGHT -> return canKnightMove(from, to)
             ChessMan.ROOK -> return canRookMove(from,to)
+            ChessMan.KING -> TODO()
+            ChessMan.QUEEN -> TODO()
+            ChessMan.BISHOP -> TODO()
+            ChessMan.PAWN -> TODO()
         }
         return true
     }

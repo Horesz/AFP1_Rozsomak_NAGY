@@ -23,7 +23,7 @@ object ChessGame {
     }
 
     fun canRookMove(from: Square,to: Square): Boolean{
-        if(from.col == to.col || from.row == to.row){
+        if(from.col == to.col || from.row == to.row && isClearHorizontallyBetween(from,to)){
             return true
         }
         return false

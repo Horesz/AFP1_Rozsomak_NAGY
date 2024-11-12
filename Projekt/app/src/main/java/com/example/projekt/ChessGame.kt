@@ -29,6 +29,10 @@ object ChessGame {
         return false
     }
 
+    private fun isClearHorizontallyBetween(from: Square,to: Square): Boolean{
+        if(from.row != to.row) return false
+    }
+
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){
             return false

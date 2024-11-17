@@ -17,12 +17,12 @@ object ChessGame {
         piecesBox.add(piece)
     }
 
-    fun canKnightMove(from: Square, to: Square): Boolean{
+    private fun canKnightMove(from: Square, to: Square): Boolean{
         return abs(from.col - to.col) == 2 && abs(from.row - to.row) == 1 ||
                 abs(from.col - to.col) == 1 && abs(from.row - to.row) == 2
     }
 
-    fun canRookMove(from: Square,to: Square): Boolean{
+    private fun canRookMove(from: Square,to: Square): Boolean{
         if(from.col == to.col && isClearVerticallyBetween(from, to) || from.row == to.row && isClearHorizontallyBetween(from,to)){
             return true
         }
@@ -77,7 +77,7 @@ object ChessGame {
         }
     }
 
-    private fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
+    fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
         if (fromCol == toCol && fromRow == toRow) return
         val movingPiece = pieceAt(fromCol, fromRow) ?: return
 
@@ -123,7 +123,7 @@ object ChessGame {
         return pieceAt(square.col, square.row)
     }
 
-    private fun pieceAt(col: Int, row: Int) : ChessPiece?{
+    fun pieceAt(col: Int, row: Int) : ChessPiece?{
         for (piece in piecesBox){
             if(col == piece.col && row == piece.row){
                 return  piece

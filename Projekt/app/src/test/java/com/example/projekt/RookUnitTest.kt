@@ -1,11 +1,8 @@
 package com.example.projekt
 
-import com.example.projekt.ChessGame.addPiece
-import com.example.projekt.ChessGame.clear
 import org.junit.Test
-import org.junit.Assert.*
 
-    class CanRookMoveUnitTest {
+class RookUnitTest {
         @Test
         fun canRookMove_singlePiece() {
             ChessGame.clear()

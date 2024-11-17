@@ -17,16 +17,29 @@ object ChessGame {
         piecesBox.add(piece)
     }
 
-    fun canKnightMove(from: Square, to: Square): Boolean{
+    private fun canKnightMove(from: Square, to: Square): Boolean{
         return abs(from.col - to.col) == 2 && abs(from.row - to.row) == 1 ||
                 abs(from.col - to.col) == 1 && abs(from.row - to.row) == 2
     }
 
-    fun canRookMove(from: Square,to: Square): Boolean{
-        if(from.col == to.col || from.row == to.row && isClearHorizontallyBetween(from,to)){
+    private fun canRookMove(from: Square,to: Square): Boolean{
+        if(from.col == to.col && isClearVerticallyBetween(from, to) || from.row == to.row && isClearHorizontallyBetween(from,to)){
             return true
         }
         return false
+    }
+
+    private fun isClearVerticallyBetween(from: Square,to: Square): Boolean{
+        if(from.col != to.col) return false
+        val gap = abs(from.row - to.row) - 1
+        if (gap == 0) return true
+        for (i in 1..gap){
+            val nextRow = if (to.row > from.row) from.row + i else from.row - 1
+            if (pieceAt(Square(from.col, nextRow)) != null){
+                return false
+            }
+        }
+        return true
     }
 
     private fun isClearHorizontallyBetween(from: Square,to: Square): Boolean{
@@ -42,6 +55,13 @@ object ChessGame {
         return true
     }
 
+    private fun canBishopMove(from: Square, to: Square): Boolean{
+        if (abs(from.col - to.col) == abs(from.row-to.row)){
+            return true
+        }
+        return false
+    }
+
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){
             return false
@@ -52,10 +72,10 @@ object ChessGame {
             ChessMan.ROOK -> return canRookMove(from,to)
             ChessMan.KING -> TODO()
             ChessMan.QUEEN -> TODO()
-            ChessMan.BISHOP -> TODO()
+            ChessMan.BISHOP -> return canBishopMove(from, to)
             ChessMan.PAWN -> TODO()
         }
-        return true
+        return true //FIXME
     }
 
     fun movePiece(from: Square, to: Square){
@@ -64,7 +84,7 @@ object ChessGame {
         }
     }
 
-    private fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
+    fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
         if (fromCol == toCol && fromRow == toRow) return
         val movingPiece = pieceAt(fromCol, fromRow) ?: return
 
@@ -110,7 +130,7 @@ object ChessGame {
         return pieceAt(square.col, square.row)
     }
 
-    private fun pieceAt(col: Int, row: Int) : ChessPiece?{
+    fun pieceAt(col: Int, row: Int) : ChessPiece?{
         for (piece in piecesBox){
             if(col == piece.col && row == piece.row){
                 return  piece

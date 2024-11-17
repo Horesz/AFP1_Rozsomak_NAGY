@@ -55,6 +55,13 @@ object ChessGame {
         return true
     }
 
+    private fun canBishopMove(from: Square, to: Square): Boolean{
+        if (abs(from.col - to.col) == abs(from.row-to.row)){
+            return true
+        }
+        return false
+    }
+
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){
             return false
@@ -65,10 +72,10 @@ object ChessGame {
             ChessMan.ROOK -> return canRookMove(from,to)
             ChessMan.KING -> TODO()
             ChessMan.QUEEN -> TODO()
-            ChessMan.BISHOP -> TODO()
+            ChessMan.BISHOP -> return canBishopMove(from, to)
             ChessMan.PAWN -> TODO()
         }
-        return true
+        return true //FIXME
     }
 
     fun movePiece(from: Square, to: Square){

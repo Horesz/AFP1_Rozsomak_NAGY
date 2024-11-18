@@ -62,6 +62,16 @@ object ChessGame {
         return false
     }
 
+    private fun canQueenMove(from: Square, to: Square): Boolean{
+        if(from.col == to.col && isClearVerticallyBetween(from, to) || from.row == to.row && isClearHorizontallyBetween(from,to)){
+            return true
+        }
+        if (abs(from.col - to.col) == abs(from.row-to.row)){
+            return true
+        }
+        return false
+    }
+
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){
             return false
@@ -71,9 +81,9 @@ object ChessGame {
             ChessMan.KNIGHT -> return canKnightMove(from, to)
             ChessMan.ROOK -> return canRookMove(from,to)
             ChessMan.KING -> TODO()
-            ChessMan.QUEEN -> TODO()
+            ChessMan.QUEEN -> return canQueenMove(from,to)
             ChessMan.BISHOP -> return canBishopMove(from, to)
-            ChessMan.PAWN -> TODO()
+            ChessMan.PAWN -> return true
         }
         return true //FIXME
     }

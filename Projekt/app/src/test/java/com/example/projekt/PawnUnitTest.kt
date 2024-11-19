@@ -10,8 +10,7 @@ class PawnUnitTest {
         println(ChessGame)
         assertTrue(ChessGame.canMove(Square(3, 1), Square(3,2)))
         assertTrue(ChessGame.canMove(Square(3, 1), Square(3,3)))
+
+        assertFalse(ChessGame.canMove(Square(3, 1), Square(4,3)))
     }
-
-
-
 }

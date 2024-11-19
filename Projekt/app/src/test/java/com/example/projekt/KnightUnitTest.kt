@@ -17,5 +17,7 @@ class KnightUnitTest {
         assertTrue(ChessGame.canMove(Square(4,4), Square(2,2)))
         assertTrue(ChessGame.canMove(Square(4,4), Square(2,3)))
         assertTrue(ChessGame.canMove(Square(4,4), Square(2,4)))
+
+        assertTrue(ChessGame.canMove(Square(4,4), Square(3,2)))
     }
 }

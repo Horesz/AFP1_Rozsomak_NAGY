@@ -10,7 +10,8 @@ class KnightUnitTest {
         ChessGame.addPiece(ChessPiece(3,3, Player.WHITE, ChessMan.KNIGHT, -1))
         println(ChessGame)
 
-        assertFalse(ChessGame.canMove(Square(3,3), Square(5,4)))
+        assertTrue(ChessGame.canMove(Square(3,3), Square(5,4)))
+        assertTrue(ChessGame.canMove(Square(3,3), Square(4,5)))
 
     }
 }

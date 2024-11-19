@@ -2,12 +2,13 @@ package com.example.projekt
 
 import org.junit.Test
 import org.junit.Assert.*
+import kotlin.math.sqrt
 
 class PawnUnitTest {
     @Test
     fun canPawnMove_firstMove() {
         println(ChessGame)
-        //assertTrue()
+        assertTrue(ChessGame.canMove(Square(3, 1), Square(3,2)))
     }
 
 

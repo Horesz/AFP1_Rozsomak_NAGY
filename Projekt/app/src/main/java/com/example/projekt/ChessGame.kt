@@ -55,6 +55,11 @@ object ChessGame {
         return true
     }
 
+    private fun isClearDiagonallyBetweenBottomLeftToUpperRight(from: Square,to: Square) : Boolean{
+        
+
+    }
+
     private fun canBishopMove(from: Square, to: Square): Boolean{
         if (abs(from.col - to.col) == abs(from.row-to.row)){
             return true

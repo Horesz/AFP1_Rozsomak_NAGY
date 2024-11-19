@@ -89,7 +89,14 @@ object ChessGame {
         return false
     }
 
-    private fun canPawnMove(from: Square, to: Square) : Boolean{
+    private fun canPawnMove(from: Square, to: Square): Boolean {
+        if (from.col == to.col) {
+            if (from.row == 1) {
+                return to.row == 2 || to.row == 3
+            } else if (from.row == 6) {
+                return to.row == 5 || to.row == 4
+            }
+        }
         return false
     }
 

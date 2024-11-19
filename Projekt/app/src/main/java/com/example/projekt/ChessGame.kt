@@ -1,6 +1,7 @@
 package com.example.projekt
 
 import kotlin.math.abs
+import kotlin.math.round
 
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()
@@ -71,6 +72,19 @@ object ChessGame {
     private fun canBishopMove(from: Square, to: Square): Boolean{
         if (abs(from.col - to.col) == abs(from.row-to.row)){
             return isClearDiagonally(from,to)
+        }
+        return false
+    }
+
+    private fun canQueenMove(from: Square, to: Square): Boolean {
+        return canRookMove(from, to) || canBishopMove(from, to)
+    }
+
+    private fun canKingMove(from: Square, to: Square): Boolean {
+        if (canQueenMove(from, to)) {
+            val deltaCol = abs(from.col - to.col)
+            val deltaRow = abs(from.row - to.row)
+            return deltaCol == 1 && deltaRow == 1 || deltaCol + deltaRow == 1
         }
         return false
     }

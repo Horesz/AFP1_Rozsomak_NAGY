@@ -1,7 +1,6 @@
 package com.example.projekt
 
 import kotlin.math.abs
-import kotlin.math.round
 
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()
@@ -76,34 +75,6 @@ object ChessGame {
         return false
     }
 
-    private fun canPawnMove(from: Square, to: Square): Boolean {
-        val movingPiece = pieceAt(from) ?: return false
-        val direction = if (movingPiece.player == Player.WHITE) 1 else -1
-        val startRow = if (movingPiece.player == Player.WHITE) 1 else 6
-
-        if (from.col == to.col) {
-
-            if (to.row == from.row + direction && pieceAt(to) == null) {
-                return true
-            }
-            if (from.row == startRow && to.row == from.row + 2 * direction && pieceAt(to) == null) {
-                val intermediateSquare = Square(from.col, from.row + direction)
-                if (pieceAt(intermediateSquare) == null) {
-                    return true
-                }
-            }
-        }
-
-        if (abs(from.col - to.col) == 1 && to.row == from.row + direction) {
-            val targetPiece = pieceAt(to)
-            if (targetPiece != null && targetPiece.player != movingPiece.player) {
-                return true
-            }
-        }
-
-        return false
-    }
-
     private fun canQueenMove(from: Square, to: Square): Boolean{
         return canRookMove(from,to) || canBishopMove(from,to)
     }
@@ -114,6 +85,31 @@ object ChessGame {
                     (abs(from.col - to.col) == 0 || abs(from.col - to.col) == 1) ||
                     abs(from.col - to.col) == 1 &&
                     (abs(from.row - to.row) == 0 || abs(from.row - to.row) == 1)
+        }
+        return false
+    }
+
+    private fun canPawnMove(from: Square, to: Square): Boolean {
+        val movingPiece = pieceAt(from) ?: return false
+        val direction = if (movingPiece.player == Player.WHITE) 1 else -1
+        val startRow = if (movingPiece.player == Player.WHITE) 1 else 6
+
+        if (from.col == to.col) {
+            if (to.row == from.row + direction && pieceAt(to) == null) {
+                return true
+            }
+            if (from.row == startRow && to.row == from.row + 2 * direction && pieceAt(to) == null) {
+                val intermediateSquare = Square(from.col, from.row + direction)
+                if (pieceAt(intermediateSquare) == null) {
+                    return true
+                }
+            }
+        }
+        if (abs(from.col - to.col) == 1 && to.row == from.row + direction) {
+            val targetPiece = pieceAt(to)
+            if (targetPiece != null && targetPiece.player != movingPiece.player) {
+                return true
+            }
         }
         return false
     }

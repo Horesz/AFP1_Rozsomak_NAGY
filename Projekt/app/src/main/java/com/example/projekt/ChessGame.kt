@@ -82,13 +82,13 @@ object ChessGame {
             return false
         }
         val movingPiece = pieceAt(from) ?: return false
-        when(movingPiece.man){
-            ChessMan.KNIGHT -> return canKnightMove(from, to)
-            ChessMan.ROOK -> return canRookMove(from,to)
-            ChessMan.KING -> return canKingMove(from,to)
-            ChessMan.QUEEN -> return canQueenMove(from,to)
-            ChessMan.BISHOP -> return canBishopMove(from, to)
-            ChessMan.PAWN -> return canPawnMove(from, to)
+         return when(movingPiece.man){
+            ChessMan.KNIGHT -> canKnightMove(from, to)
+            ChessMan.ROOK -> canRookMove(from,to)
+            ChessMan.KING -> canKingMove(from,to)
+            ChessMan.QUEEN -> canQueenMove(from,to)
+            ChessMan.BISHOP -> canBishopMove(from, to)
+            ChessMan.PAWN -> canPawnMove(from, to)
         }
     }
 

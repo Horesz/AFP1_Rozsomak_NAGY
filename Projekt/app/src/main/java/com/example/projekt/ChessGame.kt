@@ -75,6 +75,7 @@ object ChessGame {
         }
         return false
     }
+    
 
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){

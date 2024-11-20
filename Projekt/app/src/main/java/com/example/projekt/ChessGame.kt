@@ -90,15 +90,30 @@ object ChessGame {
     }
 
     private fun canPawnMove(from: Square, to: Square): Boolean {
+        val movingPiece = pieceAt(from) ?: return false
+        val direction = if (movingPiece.player == Player.WHITE) 1 else -1
+        val startRow = if (movingPiece.player == Player.WHITE) 1 else 6
+
         if (from.col == to.col) {
-            if (from.row == 1) {
-                return to.row == 2 || to.row == 3
-            } else if (from.row == 6) {
-                return to.row == 5 || to.row == 4
+            if (to.row == from.row + direction && pieceAt(to) == null) {
+                return true
+            }
+            if (from.row == startRow && to.row == from.row + 2 * direction && pieceAt(to) == null) {
+                val intermediateSquare = Square(from.col, from.row + direction)
+                if (pieceAt(intermediateSquare) == null) {
+                    return true
+                }
+            }
+        }
+        if (abs(from.col - to.col) == 1 && to.row == from.row + direction) {
+            val targetPiece = pieceAt(to)
+            if (targetPiece != null && targetPiece.player != movingPiece.player) {
+                return true
             }
         }
         return false
     }
+
 
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){

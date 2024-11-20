@@ -89,7 +89,6 @@ object ChessGame {
             ChessMan.BISHOP -> return canBishopMove(from, to)
             ChessMan.PAWN -> return canPawnMove(from, to)
         }
-        return true //FIXME
     }
 
     fun movePiece(from: Square, to: Square){

@@ -87,7 +87,7 @@ object ChessGame {
             ChessMan.KING -> return canKingMove(from,to)
             ChessMan.QUEEN -> return canQueenMove(from,to)
             ChessMan.BISHOP -> return canBishopMove(from, to)
-            ChessMan.PAWN -> return true
+            ChessMan.PAWN -> return canPawnMove(from, to)
         }
         return true //FIXME
     }

@@ -76,19 +76,6 @@ object ChessGame {
         return false
     }
 
-    private fun canQueenMove(from: Square, to: Square): Boolean {
-        return canRookMove(from, to) || canBishopMove(from, to)
-    }
-
-    private fun canKingMove(from: Square, to: Square): Boolean {
-        if (canQueenMove(from, to)) {
-            val deltaCol = abs(from.col - to.col)
-            val deltaRow = abs(from.row - to.row)
-            return deltaCol == 1 && deltaRow == 1 || deltaCol + deltaRow == 1
-        }
-        return false
-    }
-
     private fun canPawnMove(from: Square, to: Square): Boolean {
         if (from.col == to.col) {
             if (from.row == 1) {

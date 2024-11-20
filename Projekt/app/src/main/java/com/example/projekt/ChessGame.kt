@@ -100,6 +100,21 @@ object ChessGame {
         return false
     }
 
+    private fun canQueenMove(from: Square, to: Square): Boolean{
+        return canRookMove(from,to) || canBishopMove(from,to)
+    }
+
+    private fun canKingMove(from: Square, to: Square): Boolean{
+        if (canQueenMove(from,to)){
+            return abs(from.row - to.row) == 1 &&
+                    (abs(from.col - to.col) == 0 || abs(from.col - to.col) == 1) ||
+                    abs(from.col - to.col) == 1 &&
+                    (abs(from.row - to.row) == 0 || abs(from.row - to.row) == 1)
+        }
+        return false
+    }
+
+
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){
             return false

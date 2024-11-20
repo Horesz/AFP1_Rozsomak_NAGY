@@ -8,4 +8,3 @@ Csapatagok:
 - [Bobák Martin Ferenc](https://github.com/M4TRIN)
 - [Bogáthy Péter](https://github.com/BgtPtr)
 - [Góga Dávid](https://github.com/davidmaestro444)
-- [Kovács Olivér]()

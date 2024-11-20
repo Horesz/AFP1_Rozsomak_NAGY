@@ -1,7 +1,6 @@
 package com.example.projekt
 
 import kotlin.math.abs
-import kotlin.math.round
 
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()

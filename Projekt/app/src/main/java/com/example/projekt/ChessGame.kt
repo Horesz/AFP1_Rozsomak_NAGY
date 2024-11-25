@@ -56,7 +56,7 @@ object ChessGame {
     }
 
     private fun isClearDiagonally(from: Square,to: Square) : Boolean{
-        if (abs(from.col - to.col) == abs(from.row - to.row)) return false
+        if (abs(from.col - to.col) != abs(from.row - to.row)) return false
         val gap = abs(from.col - to.col) - 1
         for (i in 1..gap){
             val nextCol = if (to.col > from.col) from.col + i else from.col - i

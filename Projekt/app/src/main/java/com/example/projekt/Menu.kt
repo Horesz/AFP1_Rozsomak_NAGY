@@ -30,6 +30,8 @@ class Menu : AppCompatActivity() {
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         })
-        
+        button2.setOnClickListener(View.OnClickListener{
+            finish()
+        })
     }
 }

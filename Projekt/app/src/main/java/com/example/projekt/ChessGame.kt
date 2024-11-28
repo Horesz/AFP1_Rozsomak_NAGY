@@ -98,6 +98,7 @@ object ChessGame {
             if (to.row == from.row + direction && pieceAt(to) == null) {
                 return true
             }
+
             if (from.row == startRow && to.row == from.row + 2 * direction && pieceAt(to) == null) {
                 val intermediateSquare = Square(from.col, from.row + direction)
                 if (pieceAt(intermediateSquare) == null) {
@@ -111,9 +112,11 @@ object ChessGame {
                 return true
             }
         }
+
+        // "Passzáns" (en passant) szabály - opcionális, nem kötelező implementálni most
+
         return false
     }
-
 
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){

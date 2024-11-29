@@ -4,25 +4,22 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.projekt.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var databaseHelper: Databasehelper
+    private lateinit var databaseHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_signup)
+        setContentView(binding.root)
 
-        databaseHelper = Databasehelper(this)
+        databaseHelper = DatabaseHelper(this)
 
-        binding.signupButton.setOnClickListener { it: View ->
+        binding.signupButton.setOnClickListener {
             val signupUsername = binding.signupUsername.text.toString()
             val signupPassword = binding.signupPassword.text.toString()
 

@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class Databasehelper (private val context: Context):
+class DatabaseHelper (private val context: Context):
     SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION)
 {
 

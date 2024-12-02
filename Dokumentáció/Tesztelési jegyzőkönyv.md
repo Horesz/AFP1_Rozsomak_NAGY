@@ -35,13 +35,28 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenõr
 
 Ezzel együtt az új funkciók is tesztelésre kerültek.
 
+## Végleges teszt
+| Vizsgálat | Tesztelés idõpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | :---: |
+| Adatbázis | 2024.12.04. | Adatbázis mûködésének ellenõrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. | Nem tapasztaltam hibát. |
+| Regisztráció | 2024.12.04. | Regisztrálás a játék használatához | Fiók regisztrálása sikeres. | Nem tapasztaltam hibát. |
+| Belépés | 2024.12.04. | Bejelentkezés a játék használatához | Belépés a játékhoz sikeres. | Nem tapasztaltam hibát. |
+| Adatellenõrzés | 2024.12.04. | Felhasználó adatainak ellenõrzése | Létezik-e olyan nevû felhasználó és ha igen, volt-e már korábbi játékrekordja? | Nem tapasztaltam hibát. |
+| Felhasználó rekordlistája | 2024.12.04. | Felhasználó megtekintheti korábbi rekordjait.| Saját adatok visszanézése mûködik. | Nem tapasztaltam hibát. |
+| Új játék | 2024.12.04. | Gombra kattintva a játék elindul.| Elindult játék és a funkció mûködik. | Nem tapasztaltam hibát. |
+| Játék vége | 2024.12.04. | Játék végeztével (amikor a két játékos küzül az egyik nyer a sakk szabályai szerint) a nyertes félhez eltároljuk a pontszámát, új játékra vagy kilépésre van lehetõség. | Sikerült a nyertes adatait lekezelni és eltárolni. | Nem tapasztaltam hibát. |
+
+?
+| Szûrõk | 2024.12.04. | A termékek oldalon lehet méret és ár szerint szûrni a termékek közt | A szûrõk megfelelõen mûködnek. | Nem tapasztaltam hibát. |
+| Saját rendelések | 2024.12.04. | Minden felhasználó a saját rendelésit meg tudja nézni | Rendeléseim oldalon megjelennek a megfelelõ adatok. | Nem tapasztaltam hibát. |
+?
 
 
 
+A Végleges teszt lezajlott és minden funkció rendesen mûködik, esztétikailag is megfelelõ a program.
 
+Átadásra készen áll a megrendelõnek.
 
+Tesztelést végezte és írta: Bogáthy Péter
 
-
-
-
-
+Befejezve: 2024.12.04.

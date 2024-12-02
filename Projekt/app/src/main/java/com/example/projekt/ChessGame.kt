@@ -5,6 +5,7 @@ import kotlin.math.abs
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()
     private var currentPlayer: Player = Player.WHITE
+    var gameListener: ChessGameListener? = null
 
     init {
         reset()
@@ -165,13 +166,13 @@ object ChessGame {
         val movingPiece = pieceAt(from) ?: return
 
         if (movingPiece.player != currentPlayer) {
-            println("Nem a megfelelő játékos lép!")
+            gameListener?.showMessage("Nem a megfelelő játékos lép!")
             return
         }
 
         if (isCheck(currentPlayer)) {
             if (movingPiece.man != ChessMan.KING) {
-                println("Sakkban csak a királlyal léphetsz!")
+                gameListener?.showMessage("Sakkban csak a királlyal léphetsz!")
                 return
             }
         }
@@ -181,7 +182,7 @@ object ChessGame {
             currentPlayer = if (currentPlayer == Player.WHITE) Player.BLACK else Player.WHITE
 
             if (isCheckmate(currentPlayer)) {
-                println("${if (currentPlayer == Player.WHITE) "Fekete" else "Fehér"} játékos nyert!")
+                gameListener?.showMessage("${if (currentPlayer == Player.WHITE) "Fekete" else "Fehér"} játékos nyert!")
             }
         }
     }

@@ -18,6 +18,11 @@ object ChessGame {
         piecesBox.add(piece)
     }
 
+    fun isCheck(player: Player): Boolean {
+        val king = piecesBox.find { it.man == ChessMan.KING && it.player == player } ?: return false
+        return piecesBox.any { it.player != player && canMove(Square(it.col, it.row), Square(king.col, king.row)) }
+    }
+
     
 
     private fun canKnightMove(from: Square, to: Square): Boolean{

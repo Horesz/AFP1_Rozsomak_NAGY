@@ -24,3 +24,24 @@ Következõ tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
 | Belépési felület | 2024.11.25. | A játék belépési felületének elkészítése -> Login funkció. | Mûködik | - |
 | Regisztrációs felület | 2024.11.25. | A játék regisztrációs felületének elkészítése -> SignUp funkció (Ha még nem lépett be egyszer sem a felhasználó, akkor lérehozza a saját fiókját). | Mûködik | - |
 | Bejelentkezési / regisztációs felület véglegesítése | 2024.11.25. | Bejelentkezési és regisztációs felület kinézetének véglegesítése, hogy a játékélmény magasszintû legyen. | Mûködik | - |
+| Új játék opció | 2024.11.25. | Új játék opció elkészítése, hogy a user bármikor újrakezdhesse a sakkot. (Akár használata közben, akár új játék indítása az alkalmazásban) | Mûködik | - |
+| Bábuk szabálya | 2024.11.25. | Az összes bábu szabályainak implementálása (hogyan léphet és mozoghat a pályán). | Mûködik | - |
+| Gombok létrehozása | 2024.11.25. | Kisebb gombok létrehozása és mûködési hátterének megvalósítása. | Mûködik | - |
+| Adatbázis megalkotása | 2024.11.25. | A felhasználó adatainak eltárolása (felhasználónév és jelszó) a késõbbi belépéshez és a játékban nyújtott teljesítményének rögzítése. | Mûködik | - |
+
+A Béta teszt során a vizsgált elemek mind hibátlanul mûködtek mindenféle fennakadás nélkül.
+
+A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenõrzésre kerül.
+
+Ezzel együtt az új funkciók is tesztelésre kerültek.
+
+
+
+
+
+
+
+
+
+
+

@@ -4,6 +4,7 @@ import kotlin.math.abs
 
 object ChessGame {
     private var piecesBox = mutableSetOf<ChessPiece>()
+    private var currentPlayer: Player = Player.WHITE
 
     init {
         reset()
@@ -16,6 +17,8 @@ object ChessGame {
     fun addPiece(piece: ChessPiece){
         piecesBox.add(piece)
     }
+
+    
 
     private fun canKnightMove(from: Square, to: Square): Boolean{
         return abs(from.col - to.col) == 2 && abs(from.row - to.row) == 1 ||
@@ -134,8 +137,27 @@ object ChessGame {
     }
 
     fun movePiece(from: Square, to: Square){
-        if (canMove(from, to)){
-            movePiece(from.col,from.row,to.col,to.row)
+        val movingPiece = pieceAt(from) ?: return
+
+        if (movingPiece.player != currentPlayer) {
+            println("Nem a megfelelő játékos lép!")
+            return
+        }
+
+        if (isCheck(currentPlayer)) {
+            if (movingPiece.man != ChessMan.KING) {
+                println("Sakkban csak a királlyal léphetsz!")
+                return
+            }
+        }
+
+        if (canMove(from, to)) {
+            movePiece(from.col, from.row, to.col, to.row)
+            currentPlayer = if (currentPlayer == Player.WHITE) Player.BLACK else Player.WHITE
+
+            if (isCheckmate(currentPlayer)) {
+                println("${if (currentPlayer == Player.WHITE) "Fekete" else "Fehér"} játékos nyert!")
+            }
         }
     }
 

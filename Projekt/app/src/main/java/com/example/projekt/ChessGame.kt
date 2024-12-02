@@ -32,6 +32,11 @@ object ChessGame {
         }
     }
 
+    private fun allPossibleMoves(from: Square): List<Square> {
+        return (0..7).flatMap { col -> (0..7).map { row -> Square(col, row) } }
+            .filter { to -> canMove(from, to) }
+    }
+
     
 
     private fun canKnightMove(from: Square, to: Square): Boolean{

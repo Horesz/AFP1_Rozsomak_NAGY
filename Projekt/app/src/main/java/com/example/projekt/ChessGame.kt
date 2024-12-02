@@ -175,6 +175,11 @@ object ChessGame {
                 gameListener?.showMessage("Sakkban csak a királlyal léphetsz!")
                 return
             }
+
+            if (!doesMoveResolveCheck(from, to)) {
+                gameListener?.showMessage("A lépés után továbbra is sakkban lennél!")
+                return
+            }
         }
 
         if (canMove(from, to)) {
@@ -196,7 +201,7 @@ object ChessGame {
         addPiece(movingPiece.copy(col = to.col, row = to.row))
 
         val isStillInCheck = isCheck(currentPlayer)
-        
+
         piecesBox.remove(movingPiece.copy(col = to.col, row = to.row))
         originalPieceAtDestination?.let { piecesBox.add(it) }
         addPiece(movingPiece)

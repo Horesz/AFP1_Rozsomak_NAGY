@@ -23,6 +23,15 @@ object ChessGame {
         return piecesBox.any { it.player != player && canMove(Square(it.col, it.row), Square(king.col, king.row)) }
     }
 
+    fun isCheckmate(player: Player): Boolean {
+        if (!isCheck(player)) return false
+        return piecesBox.filter { it.player == player }.none { piece ->
+            allPossibleMoves(Square(piece.col, piece.row)).any { move ->
+                simulateMove(piece, move) { !isCheck(player) }
+            }
+        }
+    }
+
     
 
     private fun canKnightMove(from: Square, to: Square): Boolean{

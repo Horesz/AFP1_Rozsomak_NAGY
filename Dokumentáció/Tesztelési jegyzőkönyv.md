@@ -17,3 +17,10 @@ Az Alfa tesztelés során a vizsgált elemek mind hibátlanul mûködtek mindenféle fe
 Következõ tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
 
 
+## Béta teszt
+| Vizsgálat | Tesztelés idõpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | :---: |
+| Játék menü | 2024.11.25. | A játék menüjének elkészítése. | Mûködik | - |
+| Belépési felület | 2024.11.25. | A játék belépési felületének elkészítése -> Login funkció. | Mûködik | - |
+| Regisztrációs felület | 2024.11.25. | A játék regisztrációs felületének elkészítése -> SignUp funkció (Ha még nem lépett be egyszer sem a felhasználó, akkor lérehozza a saját fiókját). | Mûködik | - |
+| Bejelentkezési / regisztációs felület véglegesítése | 2024.11.25. | Bejelentkezési és regisztációs felület kinézetének véglegesítése, hogy a játékélmény magasszintû legyen. | Mûködik | - |

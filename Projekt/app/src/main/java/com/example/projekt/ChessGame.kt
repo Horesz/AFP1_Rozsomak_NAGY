@@ -25,13 +25,20 @@ object ChessGame {
         return piecesBox.any { it.player == opponent && canMove(Square(it.col, it.row), Square(king.col, king.row)) }
     }
 
-    fun isCheckmate(player: Player): Boolean {
-        if (!isCheck(player)) return false
-        return piecesBox.filter { it.player == player }.none { piece ->
-            allPossibleMoves(Square(piece.col, piece.row)).any { move ->
-                simulateMove(piece, move) { !isCheck(player) }
+    private fun isCheckmate(player: Player): Boolean {
+        val allPieces = piecesBox.filter { it.player == player }
+        for (piece in allPieces) {
+            for (col in 0 until 8) {
+                for (row in 0 until 8) {
+                    val from = Square(piece.col, piece.row)
+                    val to = Square(col, row)
+                    if (canMove(from, to) && !wouldKingBeInCheckAfterMove(from, to)) {
+                        return false
+                    }
+                }
             }
         }
+        return true
     }
 
     private fun allPossibleMoves(from: Square): List<Square> {
@@ -172,28 +179,36 @@ object ChessGame {
         }
 
         if (isCheck(currentPlayer)) {
-            if (movingPiece.man != ChessMan.KING) {
-                gameListener?.showMessage("Sakkban csak a királlyal léphetsz!")
-                return
-            }
-
-            if (!doesMoveResolveCheck(from, to)) {
-                gameListener?.showMessage("A lépés után továbbra is sakkban lennél!")
+            if (!canMove(from, to) || wouldKingBeInCheckAfterMove(from, to)) {
+                gameListener?.showMessage("Sakkban csak olyan lépést tehetsz, ami megszünteti a sakkot!")
                 return
             }
         }
 
-        if (canMove(from, to)) {
-            movePiece(from.col, from.row, to.col, to.row)
+        if (canMove(from, to) && !wouldKingBeInCheckAfterMove(from, to)) {
+            movePieceInternal(from, to)
             currentPlayer = if (currentPlayer == Player.WHITE) Player.BLACK else Player.WHITE
 
             if (isCheckmate(currentPlayer)) {
                 gameListener?.showMessage("${if (currentPlayer == Player.WHITE) "Fekete" else "Fehér"} játékos nyert!")
+            } else if (isCheck(currentPlayer)) {
+                gameListener?.showMessage("Sakk!")
             }
+        } else {
+            gameListener?.showMessage("A lépés nem érvényes!")
         }
     }
 
-    private fun doesMoveResolveCheck(from: Square, to: Square): Boolean {
+    private fun movePieceInternal(from: Square, to: Square) {
+        val movingPiece = pieceAt(from) ?: return
+
+        pieceAt(to)?.let { piecesBox.remove(it) }
+
+        piecesBox.remove(movingPiece)
+        addPiece(movingPiece.copy(col = to.col, row = to.row))
+    }
+
+    private fun wouldKingBeInCheckAfterMove(from: Square, to: Square): Boolean {
         val movingPiece = pieceAt(from) ?: return false
         val originalPieceAtDestination = pieceAt(to)
 
@@ -201,13 +216,13 @@ object ChessGame {
         originalPieceAtDestination?.let { piecesBox.remove(it) }
         addPiece(movingPiece.copy(col = to.col, row = to.row))
 
-        val isStillInCheck = isCheck(currentPlayer)
+        val isInCheck = isCheck(movingPiece.player)
 
         piecesBox.remove(movingPiece.copy(col = to.col, row = to.row))
         originalPieceAtDestination?.let { piecesBox.add(it) }
         addPiece(movingPiece)
 
-        return !isStillInCheck
+        return isInCheck
     }
 
     fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){

@@ -37,7 +37,13 @@ object ChessGame {
             .filter { to -> canMove(from, to) }
     }
 
-    
+    private fun simulateMove(piece: ChessPiece, to: Square, condition: () -> Boolean): Boolean {
+        val original = piecesBox.toSet()
+        movePiece(Square(piece.col, piece.row), to)
+        val result = condition()
+        piecesBox = original.toMutableSet()
+        return result
+    }
 
     private fun canKnightMove(from: Square, to: Square): Boolean{
         return abs(from.col - to.col) == 2 && abs(from.row - to.row) == 1 ||

@@ -66,6 +66,15 @@ object ChessGame {
         return false
     }
 
+    private fun isPathClear(from: Square, to: Square, piece: ChessPiece): Boolean {
+        return when (piece.man) {
+            ChessMan.ROOK -> isClearVerticallyBetween(from, to) || isClearHorizontallyBetween(from, to)
+            ChessMan.BISHOP -> isClearDiagonally(from, to)
+            ChessMan.QUEEN -> isClearVerticallyBetween(from, to) || isClearHorizontallyBetween(from, to) || isClearDiagonally(from, to)
+            else -> true
+        }
+    }
+
     private fun isClearVerticallyBetween(from: Square,to: Square): Boolean{
         if(from.col != to.col) return false
         val gap = abs(from.row - to.row) - 1

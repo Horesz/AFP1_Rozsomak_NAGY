@@ -3,7 +3,7 @@ import org.junit.Test
 import org.junit.Assert.*
 
 class BishopUnitTest {
-    //@Test
+    @Test
     fun canBishopMove_singlePiece(){
         ChessGame.clear()
         ChessGame.addPiece(ChessPiece(3,3, Player.WHITE, ChessMan.BISHOP, -1))
@@ -11,7 +11,7 @@ class BishopUnitTest {
         assertTrue(ChessGame.canMove(Square(3,3), Square(5,4)))
     }
 
-    //@Test
+    @Test
     fun canBishopMove_blocked(){
         println(ChessGame)
         assertFalse(ChessGame.canMove(Square(2,0),Square(5,3)))

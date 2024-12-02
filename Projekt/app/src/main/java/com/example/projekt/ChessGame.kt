@@ -94,11 +94,13 @@ object ChessGame {
         val direction = if (movingPiece.player == Player.WHITE) 1 else -1
         val startRow = if (movingPiece.player == Player.WHITE) 1 else 6
 
+        // Egyenes lépés (nincs figura az útban)
         if (from.col == to.col) {
+            // Egy mezőt léphet előre
             if (to.row == from.row + direction && pieceAt(to) == null) {
                 return true
             }
-
+            // Kettőt léphet előre az első lépéskor
             if (from.row == startRow && to.row == from.row + 2 * direction && pieceAt(to) == null) {
                 val intermediateSquare = Square(from.col, from.row + direction)
                 if (pieceAt(intermediateSquare) == null) {
@@ -106,6 +108,8 @@ object ChessGame {
                 }
             }
         }
+
+        // Átlós ütés
         if (abs(from.col - to.col) == 1 && to.row == from.row + direction) {
             val targetPiece = pieceAt(to)
             if (targetPiece != null && targetPiece.player != movingPiece.player) {
@@ -117,6 +121,9 @@ object ChessGame {
 
         return false
     }
+
+
+
 
     fun canMove(from: Square, to: Square): Boolean{
         if(from.col == to.col && from.row == to.row){

@@ -187,6 +187,23 @@ object ChessGame {
         }
     }
 
+    private fun doesMoveResolveCheck(from: Square, to: Square): Boolean {
+        val movingPiece = pieceAt(from) ?: return false
+        val originalPieceAtDestination = pieceAt(to)
+
+        piecesBox.remove(movingPiece)
+        originalPieceAtDestination?.let { piecesBox.remove(it) }
+        addPiece(movingPiece.copy(col = to.col, row = to.row))
+
+        val isStillInCheck = isCheck(currentPlayer)
+        
+        piecesBox.remove(movingPiece.copy(col = to.col, row = to.row))
+        originalPieceAtDestination?.let { piecesBox.add(it) }
+        addPiece(movingPiece)
+
+        return !isStillInCheck
+    }
+
     fun movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int){
         if (fromCol == toCol && fromRow == toRow) return
         val movingPiece = pieceAt(fromCol, fromRow) ?: return

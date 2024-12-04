@@ -1,5 +1,6 @@
 package com.example.projekt
 
 interface ChessGameListener {
-    fun showMessage(message: String)
+    fun displayWarning(message: String)
+    fun displayMessage(message: String)
 }

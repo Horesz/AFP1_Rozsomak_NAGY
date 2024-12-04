@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -39,12 +40,26 @@ class MainActivity : AppCompatActivity(), ChessDelegate, ChessGameListener{
 
     }
 
-    override fun showMessage(message: String) {
+
+        override fun displayWarning(message: String) {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun displayMessage(message: String) {
         runOnUiThread {
             AlertDialog.Builder(this)
+                .setTitle("Játék vége")
                 .setMessage(message)
-                .setPositiveButton("OK") { dialog, _ ->
-                    dialog.dismiss()
+                .setCancelable(false)
+                .setPositiveButton("Új játék") { _, _ ->
+                    // A játék resetelése
+                    ChessGame.reset()
+                    // A felhasználói felület frissítése
+                    chessView.invalidate()
+                }
+                .setNegativeButton("Kilépés") { _, _ ->
+                    finish()
                 }
                 .show()
         }

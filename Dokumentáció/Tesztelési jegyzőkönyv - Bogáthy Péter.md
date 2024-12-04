@@ -17,15 +17,17 @@ Következõ tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
 ## Béta teszt
 | Vizsgálat | Tesztelés idõpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | :---: |
-| Játék menü | 2024.11.25. | A játék menüjének elkészítése. | Mûködik | - |
-| Huszár (Knight) mozgásának szabálya | 2024.11.25. | A huszár bábu szabályainak kódba ültetése (hogyan léphet és mozoghat a pályán). | Mûködik | - |
+| Huszár (Knight) mozgásának szabálya | 2024.11.25. | A huszár bábu szabályainak implementálása (hogyan léphet és mozoghat a pályán). | Mûködik | - |
+| Huszár (Knight) mozgási szabályának tesztelése | 2024.11.25. | A huszár bábu mozgáslogikájának unit tesztje. | Mûködik | - |
 | Paraszt (Pawn) mozgásának szabálya | 2024.11.25. | A paraszt bábu szabályainak kódba ültetése (hogyan léphet és mozoghat a pályán). | Mûködik | - |
-| Királynõ (King) mozgásának szabálya | 2024.11.25. | A királynõ bábu szabályainak kódba ültetése (hogyan léphet és mozoghat a pályán). | Mûködik | - |
+| Paraszt (Pawn) mozgási szabályának tesztelése | 2024.11.25. | A paraszt bábu mozgáslogikájának unit tesztje. | Mûködik | - |
+| Király (King) mozgásának szabálya | 2024.11.25. | A király bábu szabályainak implementálása (hogyan léphet és mozoghat a pályán). | Mûködik | - |
+| Király (King) mozgási szabályának tesztelése | 2024.11.25. | A király bábu mozgáslogikájának unit tesztje. | Mûködik | - |
+| Királynõ (Queen) mozgásának szabálya | 2024.11.25. | A királynõ bábu szabályainak kódba ültetése (hogyan léphet és mozoghat a pályán). | Mûködik | - |
+| Királynõ (Queen) mozgási szabályának tesztelése | 2024.11.25. | A királynõ bábu mozgáslogikájának unit tesztje. | Mûködik | - |
 | Gombok létrehozása | 2024.11.25. | Kisebb gombok létrehozása és mûködési hátterének megvalósítása. | Mûködik | - |
 
-A Béta teszt során a vizsgált elemek mind hibátlanul mûködtek mindenféle fennakadás nélkül.
-
-A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenõrzésre kerül.
+A Béta teszt során a vizsgált elemek mind hibátlanul mûködtek mindenféle fennakadás nélkül. A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenõrzésre kerül.
 
 Ezzel együtt az új funkciók is tesztelésre kerültek.
 

@@ -25,3 +25,17 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra e
 
 Ezzel együtt az új funkciók is tesztelésre kerültek.
 
+## Végleges teszt
+| Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | :---: |
+| Menü | 2024.11.25. | A játék kezdetekor megjelenő menü. | Működik | - |
+| Menü start | 2024.11.25. | A menüből el lehet indítani a játékot | Működik | - |
+| Menü exit | 2024.11.25. | A menüből ki lehet lépni. | Működik | - |
+
+A Végleges teszt lezajlott és minden funkció rendesen működik, esztétikailag is megfelelő a program.
+
+Átadásra készen áll a megrendelőnek.
+
+Tesztelést végezte és írta: Bobák Martin
+
+Befejezve: 2024.12.04.

@@ -168,6 +168,12 @@ object ChessGame {
             return false
         }
         val movingPiece = pieceAt(from) ?: return false
+        val targetPiece = pieceAt(to)
+
+        // Ellenőrizzük, hogy a célmezőn nincs-e saját bábu
+        if (targetPiece != null && targetPiece.player == movingPiece.player) {
+            return false
+        }
         return when(movingPiece.man){
             ChessMan.KNIGHT -> canKnightMove(from, to)
             ChessMan.ROOK -> canRookMove(from,to)
@@ -183,16 +189,8 @@ object ChessGame {
 
         // Ha nem az aktuális játékos próbál lépni
         if (movingPiece.player != currentPlayer) {
-            gameListener?.showMessage("Nem a megfelelő játékos lép!")
+            gameListener?.displayWarning("Nem a megfelelő játékos lép!")
             return
-        }
-
-        // Ha sakkban van, csak a királlyal léphet
-        if (isCheck(currentPlayer)) {
-            if (movingPiece.man != ChessMan.KING) {
-                gameListener?.showMessage("Sakkban csak a királlyal léphetsz!")
-                return
-            }
         }
 
         // Ellenőrizzük, hogy a lépés érvényes, és nem teszi-e sakkba a királyt
@@ -202,12 +200,12 @@ object ChessGame {
 
             // Ellenőrizzük, hogy a másik játékos sakk-matt helyzetben van-e
             if (isCheckmate(currentPlayer)) {
-                gameListener?.showMessage("${if (currentPlayer == Player.WHITE) "Fekete" else "Fehér"} játékos nyert!")
+                gameListener?.displayMessage("${if (currentPlayer == Player.WHITE) "Fekete" else "Fehér"} játékos nyert!")
             } else if (isCheck(currentPlayer)) {
-                gameListener?.showMessage("Sakk!")
+                gameListener?.displayWarning("Sakk!")
             }
         } else {
-            gameListener?.showMessage("A lépés nem érvényes!")
+            gameListener?.displayWarning("A lépés nem érvényes!")
         }
     }
 

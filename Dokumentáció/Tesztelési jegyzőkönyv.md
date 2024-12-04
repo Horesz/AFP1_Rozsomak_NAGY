@@ -1,5 +1,5 @@
 # Tesztelési jegyzõkönyv
-Teszteléseket végezte: Bogáthy Péter
+Teszteléseket végezte: Bobák Martin, Bogáthy Péter, Deme Bence, Góga Dávid
 
 Operációs rendszer: Windows 10
 
@@ -57,6 +57,6 @@ A Végleges teszt lezajlott és minden funkció rendesen mûködik, esztétikailag is 
 
 Átadásra készen áll a megrendelõnek.
 
-Tesztelést végezte és írta: Bogáthy Péter
+Tesztelést végezte és írta: Bobák Martin, Bogáthy Péter, Deme Bence, Góga Dávid
 
 Befejezve: 2024.12.04.

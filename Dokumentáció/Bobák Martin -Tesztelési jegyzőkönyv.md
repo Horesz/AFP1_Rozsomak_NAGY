@@ -18,6 +18,8 @@ Következő tesztelésnél a többi funkció kerül vizsgálatra illetve elemzé
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | :---: |
 | Csikó mozgásának szabálya | 2024.11.25. | A csikó szabályainak implementálása. | Működik | - |
+| Király mozgásának szabálya | 2024.11.25. | A Király szabályainak implementálása. | Működik | - |
+| Királynő mozgásának szabálya | 2024.11.25. | A Királynő szabályainak implementálása. | Működik | - |
 
 A Béta teszt során a vizsgált elemek mind hibátlanul működtek mindenféle fennakadás nélkül.
 

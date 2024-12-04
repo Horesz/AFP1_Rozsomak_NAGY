@@ -18,12 +18,12 @@ Következő tesztelésnél a többi funkció kerül vizsgálatra illetve elemzé
 ## Béta teszt
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | :---: |
-| Csikó mozgásának szabálya | 2024.11.24. | A csikó szabályainak implementálása. | Működik | - |
-| Király mozgásának szabálya | 2024.11.24. | A Király szabályainak implementálása. | Működik | - |
-| Királynő mozgásának szabálya | 2024.11.24. | A Királynő szabályainak implementálása. | Működik | - |
-| Átlós mozgás | 2024.11.24. | A bábúk képesek átlósan mozogni. | Működik | - |
-| Square dataclass létrehozása | 2024.11.24. | Használható a programban mindenhol. | Működik | - |
-| Clear funkció | 2024.11.24. | Eltávolítja az összes bábút. | Működik | - |
+| Csikó mozgásának szabálya | 2024.11.23. | A csikó szabályainak implementálása. | Működik | - |
+| Király mozgásának szabálya | 2024.11.23. | A Király szabályainak implementálása. | Működik | - |
+| Királynő mozgásának szabálya | 2024.11.23. | A Királynő szabályainak implementálása. | Működik | - |
+| Átlós mozgás | 2024.11.23. | A bábúk képesek átlósan mozogni. | Működik | - |
+| Square dataclass létrehozása | 2024.11.23. | Használható a programban mindenhol. | Működik | - |
+| Clear funkció | 2024.11.23. | Eltávolítja az összes bábút. | Működik | - |
 
 A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül.
 

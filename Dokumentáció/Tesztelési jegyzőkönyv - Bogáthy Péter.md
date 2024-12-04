@@ -1,5 +1,5 @@
 # Tesztelési jegyzõkönyv
-Teszteléseket végezte: Bogáthy Péter
+Teszteléseket végezte: Bobák Martin, Bogáthy Péter, Deme Bence, Góga Dávid
 
 Operációs rendszer: Windows 10
 
@@ -27,7 +27,7 @@ Következõ tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
 | Új játék opció | 2024.11.25. | Új játék opció elkészítése, hogy a user bármikor újrakezdhesse a sakkot. (Akár használata közben, akár új játék indítása az alkalmazásban) | Mûködik | - |
 | Bábuk szabálya | 2024.11.25. | Az összes bábu szabályainak implementálása (hogyan léphet és mozoghat a pályán). | Mûködik | - |
 | Gombok létrehozása | 2024.11.25. | Kisebb gombok létrehozása és mûködési hátterének megvalósítása. | Mûködik | - |
-| Adatbázis megalkotása | 2024.11.25. | A felhasználó adatainak eltárolása (felhasználónév és jelszó) a késõbbi belépéshez és a játékban nyújtott teljesítményének rögzítése. | Mûködik | - |
+| Adatbázis megalkotása | 2024.11.25. | A felhasználó adatainak eltárolása (felhasználónév és jelszó) a késõbbi belépéshez. | Mûködik | - |
 
 A Béta teszt során a vizsgált elemek mind hibátlanul mûködtek mindenféle fennakadás nélkül.
 
@@ -41,22 +41,15 @@ Ezzel együtt az új funkciók is tesztelésre kerültek.
 | Adatbázis | 2024.12.04. | Adatbázis mûködésének ellenõrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. | Nem tapasztaltam hibát. |
 | Regisztráció | 2024.12.04. | Regisztrálás a játék használatához | Fiók regisztrálása sikeres. | Nem tapasztaltam hibát. |
 | Belépés | 2024.12.04. | Bejelentkezés a játék használatához | Belépés a játékhoz sikeres. | Nem tapasztaltam hibát. |
-| Adatellenõrzés | 2024.12.04. | Felhasználó adatainak ellenõrzése | Létezik-e olyan nevû felhasználó és ha igen, volt-e már korábbi játékrekordja? | Nem tapasztaltam hibát. |
-| Felhasználó rekordlistája | 2024.12.04. | Felhasználó megtekintheti korábbi rekordjait.| Saját adatok visszanézése mûködik. | Nem tapasztaltam hibát. |
+| Adatellenõrzés | 2024.12.04. | Felhasználó adatainak ellenõrzése | Létezik-e olyan nevû felhasználó?! | Nem tapasztaltam hibát. |
 | Új játék | 2024.12.04. | Gombra kattintva a játék elindul.| Elindult játék és a funkció mûködik. | Nem tapasztaltam hibát. |
-| Játék vége | 2024.12.04. | Játék végeztével (amikor a két játékos küzül az egyik nyer a sakk szabályai szerint) a nyertes félhez eltároljuk a pontszámát, új játékra vagy kilépésre van lehetõség. | Sikerült a nyertes adatait lekezelni és eltárolni. | Nem tapasztaltam hibát. |
-
-?
-| Szûrõk | 2024.12.04. | A termékek oldalon lehet méret és ár szerint szûrni a termékek közt | A szûrõk megfelelõen mûködnek. | Nem tapasztaltam hibát. |
-| Saját rendelések | 2024.12.04. | Minden felhasználó a saját rendelésit meg tudja nézni | Rendeléseim oldalon megjelennek a megfelelõ adatok. | Nem tapasztaltam hibát. |
-?
-
+| Játék vége | 2024.12.04. | Játék végeztével (amikor a két játékos küzül az egyik nyer a sakk szabályai szerint) új játékra vagy kilépésre van lehetõség. | Játékosokat tájékoztattuk a játék végeredményérõl. | Nem tapasztaltam hibát. |
 
 
 A Végleges teszt lezajlott és minden funkció rendesen mûködik, esztétikailag is megfelelõ a program.
 
 Átadásra készen áll a megrendelõnek.
 
-Tesztelést végezte és írta: Bogáthy Péter
+Tesztelést végezte és írta: Bobák Martin, Bogáthy Péter, Deme Bence, Góga Dávid
 
 Befejezve: 2024.12.04.

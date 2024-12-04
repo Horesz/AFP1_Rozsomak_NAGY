@@ -14,3 +14,14 @@ Az Alfa tesztelés során a vizsgált elemek mind hibátlanul működtek mindenf
 Következő tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
 
 
+## Béta teszt
+| Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | :---: |
+| Csikó mozgásának szabálya | 2024.11.25. | A csikó szabályainak implementálása. | Működik | - |
+
+A Béta teszt során a vizsgált elemek mind hibátlanul működtek mindenféle fennakadás nélkül.
+
+A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül.
+
+Ezzel együtt az új funkciók is tesztelésre kerültek.
+
